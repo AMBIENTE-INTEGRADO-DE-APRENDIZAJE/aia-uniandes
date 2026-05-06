@@ -21,13 +21,11 @@
             --enlaces: #818cf8; 
         }
 
-        /* Desplazamiento suave y ajuste para el menú fijo */
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 140px; 
         }
 
-        /* Estilos Generales */
         body { 
             font-family: 'Inter', sans-serif; 
             margin: 0; 
@@ -38,7 +36,6 @@
             background-size: 24px 24px;
         }
 
-        /* Barra Superior de Navegación */
         header { 
             background-color: rgba(15, 23, 42, 0.85); 
             backdrop-filter: blur(12px); 
@@ -55,11 +52,9 @@
         }
 
         .header-top { display: flex; align-items: center; }
-        /* Aquí se aumentó el tamaño del logo (de 55px a 90px) */
         .header-top img { height: 90px; margin-right: 20px; }
         .header-top h1 { margin: 0; font-size: 26px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
 
-        /* Menú de Navegación */
         .navbar { display: flex; gap: 30px; flex-wrap: wrap; align-items: center; }
         .navbar a {
             text-decoration: none; color: var(--texto-secundario); font-weight: 500;
@@ -73,7 +68,6 @@
         }
         .navbar a:hover::after { width: 100%; }
 
-        /* Formato estándar para secciones */
         section { padding: 60px 10%; }
         section h2 { 
             font-size: 32px; font-weight: 700; color: #ffffff;
@@ -89,7 +83,7 @@
             margin-bottom: 40px; line-height: 1.6;
         }
 
-        /* 1. Cajas Interactivas (Videos) */
+        /* Cajas Interactivas (Videos) */
         .areas-container { 
             display: flex; gap: 0; justify-content: space-between; 
             box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
@@ -125,7 +119,7 @@
             line-height: 1.7; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; 
         }
 
-        /* 2. Sección Uso del Laboratorio */
+        /* Sección Uso del Laboratorio */
         .assets-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
         }
@@ -144,7 +138,7 @@
         }
         .btn-reserva:hover { background-color: var(--dorado-hover); transform: scale(1.02); }
 
-        /* 3. Sección Nuestra Gente */
+        /* Sección Nuestra Gente */
         .people-container { display: flex; flex-direction: column; gap: 30px; }
         .person-card { 
             display: flex; gap: 25px; align-items: center; background: var(--fondo-tarjetas); 
@@ -165,7 +159,7 @@
         .person-email a { color: var(--enlaces); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
         .person-email a:hover { color: var(--dorado-uniandes); text-decoration: underline; }
 
-        /* 4. Sección Investigación */
+        /* Sección Investigación */
         .research-dropdown {
             background-color: var(--fondo-tarjetas);
             border: 1px solid rgba(255,255,255,0.05);
@@ -189,9 +183,7 @@
             transition: background-color 0.3s ease;
         }
         
-        .research-summary::-webkit-details-marker {
-            display: none;
-        }
+        .research-summary::-webkit-details-marker { display: none; }
         
         .research-summary::after {
             content: '+';
@@ -201,10 +193,7 @@
             transition: transform 0.3s ease;
         }
         
-        details[open] .research-summary::after {
-            transform: rotate(45deg);
-        }
-        
+        details[open] .research-summary::after { transform: rotate(45deg); }
         details[open] .research-summary {
             background-color: rgba(0,0,0,0.4);
             border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -245,9 +234,72 @@
             color: var(--texto-secundario);
             font-size: 16px;
             max-width: 850px;
-            margin: 0 0 35px 0;
+            margin: 0 0 25px 0;
             line-height: 1.7;
         }
+
+        /* ── NUEVO: Bloque de autores ── */
+        .project-authors {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0 0 30px 0;
+            padding: 18px 24px;
+            background: rgba(90, 192, 204, 0.07);
+            border: 1px solid rgba(90, 192, 204, 0.2);
+            border-radius: 10px;
+            max-width: 850px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .project-authors-label {
+            width: 100%;
+            text-align: center;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--dorado-uniandes);
+            margin-bottom: 10px;
+        }
+
+        .author-chip {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 8px;
+            padding: 10px 18px;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .author-chip:hover {
+            background: rgba(90, 192, 204, 0.1);
+            border-color: rgba(90, 192, 204, 0.35);
+        }
+
+        .author-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .author-email {
+            font-size: 12px;
+            color: var(--enlaces);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .author-email:hover {
+            color: var(--dorado-uniandes);
+            text-decoration: underline;
+        }
+        /* ── Fin bloque autores ── */
 
         .project-media {
             width: 100%;
@@ -260,18 +312,10 @@
         }
 
         .project-media img, .project-media video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 100%; object-fit: cover; display: block;
         }
 
-        .project-media iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            display: block;
-        }
+        .project-media iframe { width: 100%; height: 100%; border: none; display: block; }
 
         /* Ajustes Mobile */
         @media (max-width: 768px) {
@@ -284,6 +328,7 @@
             .person-card { flex-direction: column; text-align: center; }
             .project-card { padding: 25px 15px; }
             .project-title { font-size: 22px; }
+            .author-chip { width: 100%; }
         }
     </style>
 </head>
@@ -450,9 +495,21 @@
         <details class="research-dropdown">
             <summary class="research-summary">Proyectos de Posgrado</summary>
             
+            <div class="projects-container">
                 <div class="project-card">
                     <h3 class="project-title">Control de robots a través de gafas de realidad aumentada</h3>
                     <p class="project-desc">Con el fin de generar interfaces más amigables y que mejoren la experiencia de uso de un operador de robots, se crea este proyecto proveyendo una interfaz que se visualiza a través de un visor Meta Quest 2, haciendo que la interacción del operador con el robot sea más dinámica e inmersiva y a su vez facilite la forma de dar instrucciones al robot para moverse, sin tener mucho conocimiento de cómo funciona el mismo. El proyecto realizado integra Meta Quest 2, Python, Unity y el robot Universal UR3.</p>
+                    
+                    <!-- Bloque de autores -->
+                    <div class="project-authors">
+                        <div class="project-authors-label">✦ Autores del proyecto</div>
+                        <div class="author-chip">
+                            <span class="author-name">Fredy Chaparro</span>
+                            <a href="mailto:f.chaparroc@uniandes.edu.co" class="author-email">f.chaparroc@uniandes.edu.co</a>
+                        </div>
+                        <!-- Agrega más author-chip aquí si hay más autores -->
+                    </div>
+
                     <div class="project-media">
                         <a href="https://www.youtube.com/watch?v=PdZfdl40pkA" target="_blank" rel="noopener noreferrer" style="display:block; width:100%; height:100%; position:relative; background:#000; text-decoration:none;">
                             <img src="https://img.youtube.com/vi/PdZfdl40pkA/maxresdefault.jpg" alt="Control de robots a través de gafas de realidad aumentada" style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.85; transition: opacity 0.3s ease;">
@@ -477,6 +534,17 @@
                 <div class="project-card">
                     <h3 class="project-title">Realidad Aumentada en Tareas de Bodega</h3>
                     <p class="project-desc">Aplicación de tecnología de realidad aumentada para apoyar al operario en tareas de ubicación de cajas, modelando escenarios como un problema de la mochila (knapsack problem).</p>
+
+                    <!-- Bloque de autores — completa con nombre y correo -->
+                    <div class="project-authors">
+                        <div class="project-authors-label">✦ Autores del proyecto</div>
+                        <div class="author-chip">
+                            <span class="author-name">Nombre del autor</span>
+                            <a href="mailto:correo@uniandes.edu.co" class="author-email">correo@uniandes.edu.co</a>
+                        </div>
+                        <!-- Agrega más author-chip aquí si hay más autores -->
+                    </div>
+
                     <div class="project-media">
                         <video controls playsinline>
                             <source src="ruta_al_video_pregrado.mp4" type="video/mp4">
