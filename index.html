@@ -138,6 +138,16 @@
         }
         .btn-reserva:hover { background-color: var(--dorado-hover); transform: scale(1.02); }
 
+        .lab-notice {
+            display: flex; align-items: flex-start; gap: 15px;
+            background: rgba(90, 192, 204, 0.1); border: 1px solid rgba(90, 192, 204, 0.35);
+            border-left: 4px solid var(--dorado-uniandes); border-radius: 8px;
+            padding: 20px 25px; margin-bottom: 40px;
+        }
+        .lab-notice-icon { font-size: 22px; line-height: 1; flex-shrink: 0; }
+        .lab-notice p { margin: 0; color: var(--texto-principal); font-size: 15px; line-height: 1.6; }
+        .lab-notice strong { color: var(--dorado-uniandes); }
+
         /* Sección Nuestra Gente */
         .people-container { display: flex; flex-direction: column; gap: 30px; }
         .person-card { 
@@ -394,6 +404,11 @@
         <p class="section-description">
             Como estudiante de pregrado o posgrado de la Universidad de los Andes, tienes acceso garantizado a los activos tecnológicos del laboratorio para el desarrollo de tus proyectos. A través de nuestro sistema, puedes reservar el uso del siguiente equipamiento de vanguardia:
         </p>
+
+        <div class="lab-notice">
+            <span class="lab-notice-icon">⚠️</span>
+            <p>Si vas a reservar equipos como las gafas de realidad aumentada, robots o impresión 3D, debes llegar al laboratorio en el horario que has reservado (<strong>ML 508</strong>). Si es tu primera vez utilizando los equipos, también tendrás que realizar la capacitación dictada por el equipo del laboratorio.</p>
+        </div>
 
         <div class="assets-grid">
             <div class="asset-card">
