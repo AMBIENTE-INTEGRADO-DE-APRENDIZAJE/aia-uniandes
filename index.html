@@ -1,561 +1,382 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<!--
+  AIA Uniandes — Inicio
+  OJO: la URL base de las etiquetas canonical y Open Graph está tomada del
+  afiche de horarios (ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/).
+  Verifíquenla antes de publicar: apuntar el canonical a un dominio equivocado
+  es peor que no ponerlo.
+-->
+<html lang="es" data-tema="claro">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ambiente Integrado de Aprendizaje | Uniandes</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <style>
-        /* Variables de color para el Tema Oscuro (Dark Mode) */
-        :root {
-            --fondo-principal: #172944; 
-            --fondo-tarjetas: #172944; 
-            --dorado-uniandes: #5ac0cc; 
-            --dorado-hover: #5ac0cc;
-            --texto-principal: #ffffff; 
-            --texto-secundario: #9ca3af; 
-            --enlaces: #818cf8; 
-        }
+<title>Ambiente Integrado de Aprendizaje | Laboratorio de Ingeniería Industrial — Uniandes</title>
+<meta name="description" content="Laboratorio de Industria 4.0 de Ingeniería Industrial de la Universidad de los Andes. Robótica colaborativa, impresión 3D, realidad aumentada e inteligencia artificial. Reserva de equipos sin costo para estudiantes, en ML 508.">
+<link rel="canonical" href="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/">
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 140px; 
-        }
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Ambiente Integrado de Aprendizaje — Uniandes">
+<meta property="og:title" content="Ambiente Integrado de Aprendizaje | Laboratorio de Ingeniería Industrial">
+<meta property="og:description" content="Robótica colaborativa, impresión 3D, realidad aumentada e inteligencia artificial. Reserva de equipos sin costo para estudiantes de Uniandes.">
+<meta property="og:url" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/">
+<meta property="og:image" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/Oficial_Images/LogoAIA.png">
+<meta name="twitter:card" content="summary_large_image">
 
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; 
-            padding: 0; 
-            color: var(--texto-principal); 
-            background-color: var(--fondo-principal);
-            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
+<link rel="icon" href="assets/img/logo-aia.png">
 
-        header { 
-            background-color: rgba(15, 23, 42, 0.85); 
-            backdrop-filter: blur(12px); 
-            -webkit-backdrop-filter: blur(12px);
-            padding: 20px 5% 15px 5%; 
-            box-shadow: 0 4px 20px rgba(0,0,0,0.4); 
-            display: flex; 
-            flex-direction: column; 
-            gap: 15px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 
-        .header-top { display: flex; align-items: center; }
-        .header-top img { height: 90px; margin-right: 20px; }
-        .header-top h1 { margin: 0; font-size: 26px; font-weight: 700; color: #ffffff; letter-spacing: -0.5px; }
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/componentes.css">
 
-        .navbar { display: flex; gap: 30px; flex-wrap: wrap; align-items: center; }
-        .navbar a {
-            text-decoration: none; color: var(--texto-secundario); font-weight: 500;
-            font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px;
-            position: relative; padding-bottom: 5px; transition: color 0.3s ease;
-        }
-        .navbar a:hover { color: #ffffff; }
-        .navbar a::after {
-            content: ''; position: absolute; width: 0; height: 2px;
-            bottom: 0; left: 0; background-color: var(--dorado-uniandes); transition: width 0.3s ease;
-        }
-        .navbar a:hover::after { width: 100%; }
+<!-- Estampa el tema antes de pintar: sin esto la página parpadea en claro
+     antes de ponerse oscura. -->
+<script>
+  (function () {
+    try {
+      var g = localStorage.getItem('aia-tema');
+      if (!g) g = matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      document.documentElement.setAttribute('data-tema', g);
+    } catch (e) {}
+  })();
+</script>
 
-        section { padding: 60px 10%; }
-        section h2 { 
-            font-size: 32px; font-weight: 700; color: #ffffff;
-            margin-bottom: 30px; display: inline-block; position: relative;
-        }
-        section h2::after {
-            content: ''; position: absolute; left: 0; bottom: -10px;
-            width: 60%; height: 4px; background-color: var(--dorado-uniandes); border-radius: 2px;
-        }
-        
-        .section-description {
-            font-size: 16px; color: var(--texto-secundario); max-width: 900px;
-            margin-bottom: 40px; line-height: 1.6;
-        }
-
-        /* Cajas Interactivas (Videos) */
-        .areas-container { 
-            display: flex; gap: 0; justify-content: space-between; 
-            box-shadow: 0 15px 40px rgba(0,0,0,0.5); 
-        }
-        .card { 
-            flex: 1; position: relative; border-radius: 0; overflow: hidden; 
-            aspect-ratio: 1 / 1; background-color: #000; border-right: 1px solid rgba(255,255,255,0.05); 
-        }
-        .card:last-child { border-right: none; }
-        .card video { width: 100%; height: 100%; object-fit: cover; display: block; opacity: 0.6; }
-        .card::before {
-            content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.8)); z-index: 1; 
-        }
-        
-        .card-title { 
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); 
-            font-weight: 800; font-size: 40px; text-transform: uppercase; letter-spacing: 2px; 
-            text-align: center; width: 90%; margin: 0; color: #ffffff; z-index: 2; 
-            text-shadow: 0 6px 20px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,0.8); 
-            transition: opacity 0.4s ease, transform 0.4s ease; 
-        }
-        
-        .card:hover .card-title { opacity: 0; transform: translate(-50%, -60%); }
-        .overlay { 
-            position: absolute; bottom: 0; left: 0; right: 0; background-color: rgba(15, 23, 42, 0.9); 
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); overflow: hidden; width: 100%; height: 0; 
-            transition: height 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: 3; 
-        }
-        .card:hover .overlay { height: 100%; }
-        .overlay-text { 
-            color: var(--texto-principal); padding: 30px; text-align: center; font-size: 16px; 
-            line-height: 1.7; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 85%; 
-        }
-
-        /* Sección Uso del Laboratorio */
-        .assets-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;
-        }
-        .asset-card {
-            background: var(--fondo-tarjetas); padding: 30px 25px; border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.05); display: flex; flex-direction: column;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-        .asset-card:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.15); }
-        .asset-card h3 { color: #ffffff; font-size: 20px; margin: 0 0 15px 0; font-weight: 600; }
-        .asset-card p { color: var(--texto-secundario); font-size: 14px; margin: 0 0 25px 0; flex-grow: 1; }
-        .btn-reserva {
-            display: inline-block; background-color: var(--dorado-uniandes); color: #000000;
-            text-align: center; padding: 12px 15px; border-radius: 6px; text-decoration: none;
-            font-weight: 600; font-size: 14px; transition: background-color 0.3s ease, transform 0.2s ease;
-        }
-        .btn-reserva:hover { background-color: var(--dorado-hover); transform: scale(1.02); }
-
-        /* Sección Nuestra Gente */
-        .people-container { display: flex; flex-direction: column; gap: 30px; }
-        .person-card { 
-            display: flex; gap: 25px; align-items: center; background: var(--fondo-tarjetas); 
-            padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); 
-            border: 1px solid rgba(255,255,255,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 100%; box-sizing: border-box; 
-        }
-        .person-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
-        .person-pic { 
-            width: 140px; height: 140px; border-radius: 50%; background-color: #334155; 
-            object-fit: cover; flex-shrink: 0; border: 3px solid rgba(255,255,255,0.1); box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-        }
-        .person-info { flex-grow: 1; }
-        .person-info h3 { margin: 0 0 5px 0; color: #ffffff; font-size: 22px; font-weight: 700; }
-        .person-info h4 { margin: 0 0 15px 0; color: var(--dorado-uniandes); font-weight: 500; font-size: 15px;}
-        .person-info p { margin: 0; line-height: 1.6; color: var(--texto-secundario); font-size: 14px;}
-        .person-email { margin: 15px 0 0 0; font-size: 14px; color: var(--texto-principal); }
-        .person-email a { color: var(--enlaces); text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px; }
-        .person-email a:hover { color: var(--dorado-uniandes); text-decoration: underline; }
-
-        /* Sección Investigación */
-        .research-dropdown {
-            background-color: var(--fondo-tarjetas);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            margin-bottom: 25px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-        
-        .research-summary {
-            padding: 25px 30px;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--dorado-uniandes);
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease;
-        }
-        
-        .research-summary::-webkit-details-marker { display: none; }
-        
-        .research-summary::after {
-            content: '+';
-            font-size: 30px;
-            color: #ffffff;
-            font-weight: 300;
-            transition: transform 0.3s ease;
-        }
-        
-        details[open] .research-summary::after { transform: rotate(45deg); }
-        details[open] .research-summary {
-            background-color: rgba(0,0,0,0.4);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .projects-container {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-            padding: 40px 30px;
-            background-color: rgba(15, 23, 42, 0.3);
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            background-color: var(--fondo-principal);
-            border: 1px solid rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.2);
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .project-title {
-            color: #ffffff;
-            font-size: 26px;
-            font-weight: 700;
-            margin: 0 0 15px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .project-desc {
-            color: var(--texto-secundario);
-            font-size: 16px;
-            max-width: 850px;
-            margin: 0 0 25px 0;
-            line-height: 1.7;
-        }
-
-        /* ── NUEVO: Bloque de autores ── */
-        .project-authors {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin: 0 0 30px 0;
-            padding: 18px 24px;
-            background: rgba(90, 192, 204, 0.07);
-            border: 1px solid rgba(90, 192, 204, 0.2);
-            border-radius: 10px;
-            max-width: 850px;
-            width: 100%;
-            box-sizing: border-box;
-        }
-
-        .project-authors-label {
-            width: 100%;
-            text-align: center;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--dorado-uniandes);
-            margin-bottom: 10px;
-        }
-
-        .author-chip {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 4px;
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 8px;
-            padding: 10px 18px;
-            transition: border-color 0.3s ease, background 0.3s ease;
-        }
-
-        .author-chip:hover {
-            background: rgba(90, 192, 204, 0.1);
-            border-color: rgba(90, 192, 204, 0.35);
-        }
-
-        .author-name {
-            font-size: 14px;
-            font-weight: 600;
-            color: #ffffff;
-        }
-
-        .author-email {
-            font-size: 12px;
-            color: var(--enlaces);
-            text-decoration: none;
-            transition: color 0.2s ease;
-        }
-
-        .author-email:hover {
-            color: var(--dorado-uniandes);
-            text-decoration: underline;
-        }
-        /* ── Fin bloque autores ── */
-
-        .project-media {
-            width: 100%;
-            max-width: 900px;
-            aspect-ratio: 16 / 9;
-            background-color: #000;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .project-media img, .project-media video {
-            width: 100%; height: 100%; object-fit: cover; display: block;
-        }
-
-        .project-media iframe { width: 100%; height: 100%; border: none; display: block; }
-
-        /* Ajustes Mobile */
-        @media (max-width: 768px) {
-            .header-top { flex-direction: column; text-align: center; }
-            .header-top img { margin: 0 0 10px 0; }
-            .navbar { justify-content: center; }
-            .areas-container { flex-direction: column; }
-            .card { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.05); }
-            .card-title { font-size: 28px; } 
-            .person-card { flex-direction: column; text-align: center; }
-            .project-card { padding: 25px 15px; }
-            .project-title { font-size: 22px; }
-            .author-chip { width: 100%; }
-        }
-    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ResearchOrganization",
+  "name": "Ambiente Integrado de Aprendizaje",
+  "alternateName": "AIA Uniandes",
+  "description": "Laboratorio de Industria 4.0 del Departamento de Ingeniería Industrial de la Universidad de los Andes.",
+  "url": "https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/",
+  "email": "aiaindustrial@uniandes.edu.co",
+  "parentOrganization": {
+    "@type": "CollegeOrUniversity",
+    "name": "Universidad de los Andes",
+    "url": "https://uniandes.edu.co"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Edificio Mario Laserna, ML 508, quinto piso",
+    "addressLocality": "Bogotá",
+    "addressCountry": "CO"
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }],
+  "knowsAbout": [
+    "Robótica colaborativa",
+    "Manufactura aditiva",
+    "Realidad aumentada",
+    "Inteligencia artificial aplicada a sistemas ciberfísicos"
+  ]
+}
+</script>
 </head>
+
 <body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
 
-    <header>
-        <div class="header-top">
-            <img src="Oficial_Images/LogoAIA_blanco.png" alt="Logo de Ingeniería Industrial">
-            <h1>Ambiente Integrado de Aprendizaje</h1>
+<header class="encabezado">
+  <div class="contenedor">
+    <div class="encabezado__barra">
+      <a class="marca" href="index.html">
+        <img src="assets/img/logo-aia.png" alt="" width="38" height="49">
+        <span>
+          <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+          <span class="marca__sub">Uniandes / Ing. Industrial / ML&nbsp;508</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__enlace" href="index.html" aria-current="page">AIA</a>
+        <a class="nav__enlace" href="pages/laboratorio.html">Laboratorio</a>
+        <a class="nav__enlace" href="pages/equipos.html">Equipos</a>
+        <a class="nav__enlace" href="pages/investigacion.html">Investigación</a>
+        <a class="nav__enlace" href="pages/eventos.html">Eventos</a>
+        <div class="tema" role="group" aria-label="Tema de color">
+          <button class="tema__boton" type="button" data-poner-tema="claro" aria-pressed="true">Claro</button>
+          <button class="tema__boton" type="button" data-poner-tema="oscuro" aria-pressed="false">Oscuro</button>
         </div>
-        
-        <nav class="navbar">
-            <a href="#proyectos">Proyectos</a>
-            <a href="#uso-laboratorio">Uso del laboratorio</a>
-            <a href="#nuestra-gente">Nuestra gente</a>
-            <a href="#demos">Demos</a>
-            <a href="#investigacion">Investigación</a>
-            <a href="#capacitaciones">Capacitaciones</a>
-            <a href="eventos.html">Eventos</a>
-        </nav>
-    </header>
+        <a class="boton boton--primario boton--compacto" href="pages/equipos.html">Reservar</a>
+      </nav>
 
-    <section id="proyectos">
-        <div class="areas-container">
-            <div class="card">
-                <video autoplay loop muted playsinline>
-                    <source src="Videos_MainPage/Video_impresion3d.mp4" type="video/mp4">
-                </video>
-                <p class="card-title">Impresión 3D</p>
-                <div class="overlay">
-                    <div class="overlay-text">
-                        Desarrollo de proyectos aplicados a la manufactura aditiva. Investigación en nuevos materiales y enfoques pedagógicos.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <video autoplay loop muted playsinline>
-                    <source src="Videos_MainPage/Video_Robot.mp4" type="video/mp4">
-                </video>
-                <p class="card-title">Robótica</p>
-                <div class="overlay">
-                    <div class="overlay-text">
-                        Diseño, programación y control de sistemas robóticos aplicados a la automatización de procesos logísticos.
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <video autoplay loop muted playsinline>
-                    <source src="Videos_MainPage/Video_IASistemasCiberFisicos.mp4" type="video/mp4">
-                </video>
-                <p class="card-title">IA en Sistemas Ciberfísicos</p>
-                <div class="overlay">
-                    <div class="overlay-text">
-                        Implementación de modelos de análisis de datos, inteligencia artificial y algoritmos de optimización para simulación de sistemas u operaciones industriales reales.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+      <button class="menu-boton" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil">
+        <span class="oculto-visual">Abrir menú</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 7h16M4 12h16M4 17h16"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    <section id="uso-laboratorio">
-        <h2>Uso del Laboratorio</h2>
-        <p class="section-description">
-            Como estudiante de pregrado o posgrado de la Universidad de los Andes, tienes acceso garantizado a los activos tecnológicos del laboratorio para el desarrollo de tus proyectos. A través de nuestro sistema, puedes reservar el uso del siguiente equipamiento de vanguardia:
+  <div class="nav-movil" id="menu-movil" data-menu-panel data-abierto="no">
+    <div class="nav-movil__pista">
+      <a class="chip" href="index.html" aria-current="page">AIA</a>
+      <a class="chip" href="pages/laboratorio.html">Laboratorio</a>
+      <a class="chip" href="pages/equipos.html">Equipos</a>
+      <a class="chip" href="pages/investigacion.html">Investigación</a>
+      <a class="chip" href="pages/eventos.html">Eventos</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ===================== Portada ===================== -->
+  <section class="seccion contenedor">
+    <div class="rejilla rejilla--2" style="gap: 44px; align-items: center;">
+      <div class="columna" style="gap: 20px;">
+        <span class="pildora">
+          <span class="pildora__punto"></span>
+          Laboratorio activo · ML 508
+        </span>
+
+        <h1>Ambiente Integrado de Aprendizaje y <span style="color: var(--acento);">espacios ciberfísicos</span></h1>
+
+        <p class="entradilla">
+          El laboratorio de Ingeniería Industrial de la Universidad de los Andes.
+          Robótica colaborativa, manufactura aditiva, realidad aumentada e inteligencia
+          artificial aplicada a sistemas ciberfísicos.
         </p>
 
-        <div class="assets-grid">
-            <div class="asset-card">
-                <h3>Cómputo de Alto Rendimiento</h3>
-                <p>Estaciones de trabajo diseñadas para procesar simulaciones complejas, modelado 3D y algoritmos de optimización.</p>
-                <a href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/BRoPo4ew7U-iPo3kA8K_7g2?ismsaljsauthenabled" target="_blank" class="btn-reserva">Reservar Equipo</a>
-            </div>
-
-            <div class="asset-card">
-                <h3 style="color: var(--dorado-uniandes);">(Posgrado) Cómputo de Alto Rendimiento</h3>
-                <p>Estación de trabajo de alto rendimiento diseñada para entrenamientos de modelos complejos o análisis de datos robustos.</p>
-                <a href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/gIT4S7Dw0keV1Vyv1aAmOw2?ismsaljsauthenabled" target="_blank" class="btn-reserva">Reservar Equipo</a>
-            </div>
-
-            <div class="asset-card">
-                <h3>Brazos Robóticos</h3>
-                <p>Sistemas colaborativos Universal Robots (modelos UR3 y UR30) para la integración y pruebas de automatización.</p>
-                <a href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/ZRsQf4GbTkqRZRGDBrn7rQ2?ismsaljsauthenabled" target="_blank" class="btn-reserva">Reservar UR3 / UR30</a>
-            </div>
-
-            <div class="asset-card">
-                <h3>Realidad Aumentada</h3>
-                <p>Gafas Microsoft HoloLens 2, ideales para interactuar con hologramas y desarrollar proyectos en entornos mixtos.</p>
-                <a href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/lj3ByoGkOEGEJ5ngOe0-zA2?ismsaljsauthenabled" target="_blank" class="btn-reserva">Reservar HoloLens 2</a>
-            </div>
-
-            <div class="asset-card">
-                <h3>Impresión 3D</h3>
-                <p>Sistemas de manufactura aditiva avanzada Bambulab (modelos H2D y X1 Carbon) para prototipado rápido y preciso.</p>
-                <a href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/NX-PcvJX4E6l-NHRJQCd2Q2?ismsaljsauthenabled" target="_blank" class="btn-reserva">Reservar Impresora</a>
-            </div>
+        <div class="chips" style="gap: 11px; margin-top: 4px;">
+          <a class="boton boton--primario" href="pages/equipos.html">Reservar un equipo</a>
+          <a class="boton boton--secundario" href="pages/laboratorio.html#horario">Ver el horario</a>
+          <a class="boton boton--secundario" href="pages/investigacion.html">Ver proyectos</a>
         </div>
-    </section>
+      </div>
 
-    <section id="nuestra-gente">
-        <h2>Nuestra gente</h2>
-        <div class="people-container">
-
-            <div class="person-card">
-                <img src="fotos_integrantes/TABARES_ALEJANDRA.jpeg" alt="Foto ALEJANDRATABARES" class="person-pic">
-                <div class="person-info">
-                    <h3>Alejandra Tabares</h3>
-                    <h4>Coordinadora del laboratorio</h4>
-                    <p><strong>Áreas de interés y habilidades:</strong> Desarrollo de modelos robustos de programación determinística, estocástica y dinámica, optimización clásica y combinatoria aplicada al campo de sistemas eléctricos y de distribución, y creación de herramientas computacionales para la participación de usuarios en la gestión de recursos energéticos.</p>
-                    <p class="person-email"><strong>Contacto:</strong> <a href="mailto:a.tabaresp@uniandes.edu.co">a.tabaresp@uniandes.edu.co</a></p>
-                </div>
-            </div>
-
-            <div class="person-card">
-                <img src="fotos_integrantes/TORRES_CARLOS.jpeg" alt="Foto CARLOSTORRES" class="person-pic">
-                <div class="person-info">
-                    <h3>Carlos Felipe Torres Usma</h3>
-                    <h4>Asistente graduado de docencia e investigación</h4>
-                    <p><strong>Áreas de interés y habilidades:</strong> Industria 4.0 bajo la aplicación de inteligencia artificial, robótica y manufactura aditiva dentro de las operaciones industriales desde el diseño de productos hasta la producción y logística.</p>
-                    <p class="person-email"><strong>Contacto:</strong> <a href="mailto:c.torresu@uniandes.edu.co">c.torresu@uniandes.edu.co</a></p>
-                </div>
-            </div>
-
-            <!-- <div class="person-card">
-                <img src="fotos_integrantes/LEON_JULIAN.jpeg" alt="Foto JULIANLEON" class="person-pic">
-                <div class="person-info">
-                    <h3>Julian León</h3>
-                    <h4>Monitor de investigación</h4>
-                    <p><strong>Áreas de interés y habilidades:</strong> Logística y optimización aplicando tecnología de realidad aumentada para apoyar al operario dentro de tareas de ubicación de cajas en bodega (knapsack problem).</p>
-                    <p class="person-email"><strong>Contacto:</strong> <a href="mailto:eleonc@uniandes.edu.co">eleonc@uniandes.edu.co</a></p>
-                </div>
-            </div>
-
-            <div class="person-card">
-                <img src="fotos_integrantes/ARCILA_FELIPE.jpeg" alt="Foto FELIPEARCILA" class="person-pic">
-                <div class="person-info">
-                    <h3>Felipe Arcila</h3>
-                    <h4>Monitor de pregrado</h4>
-                    <p><strong>Áreas de interés y habilidades:</strong> Integración de tecnologías de impresión 3D, diseño mecánico y gestión de plataformas de información.</p>
-                    <p class="person-email"><strong>Contacto:</strong> <a href="mailto:f.arcila@uniandes.edu.co">f.arcila@uniandes.edu.co</a></p>
-                </div>
-            </div>
-
-            <div class="person-card">
-                <img src="fotos_integrantes/MUNOZLUCAS.JPG" alt="Foto LUCASMUNOZ" class="person-pic">
-                <div class="person-info">
-                    <h3>Lucas Muñoz</h3>
-                    <h4>Monitor de pregrado</h4>
-                    <p><strong>Áreas de interés y habilidades:</strong> Análisis financiero en ingeniería, inteligencia de negocios e integración de sistemas robóticos.</p>
-                    <p class="person-email"><strong>Contacto:</strong> <a href="mailto:l.munozc@uniandes.edu.co">l.munozc@uniandes.edu.co</a></p>
-                </div>
-            </div> -->
-
+      <div style="position: relative;">
+        <div class="placa" style="height: 420px;">
+          <video muted loop playsinline autoplay preload="metadata" aria-label="Brazo robótico del laboratorio en operación">
+            <source src="assets/video/brazo-ur3.mp4" type="video/mp4">
+          </video>
+          <span class="placa__nota">Brazo UR3 en operación</span>
         </div>
-    </section>
+        <span style="position: absolute; top: -18px; right: -10px; display: block; padding: 18px 24px; background: var(--acento-marca); color: var(--sobre-acento-marca); border-radius: var(--r-tarjeta); box-shadow: 0 26px 44px rgba(15,124,138,0.34); font-family: var(--display); font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.03em;">
+          Equipos reservables
+        </span>
+      </div>
+    </div>
+  </section>
 
-    <section id="demos">
-        <h2>Demos</h2>
-    </section>
+  <!-- ===================== Equipos ===================== -->
+  <section class="seccion contenedor" aria-labelledby="t-equipos">
+    <div class="seccion__cabeza">
+      <h2 id="t-equipos">Equipos disponibles para reservar</h2>
+      <p class="apoyo">
+        Toca cualquier tarjeta para traerla al frente. La primera reserva de robots,
+        gafas de realidad aumentada o impresoras 3D requiere capacitación previa presencial.
+      </p>
+    </div>
 
-    <section id="investigacion">
-        <h2>Investigación</h2>
-        
-        <details class="research-dropdown">
-            <summary class="research-summary">Proyectos de Posgrado</summary>
-            
-            <div class="projects-container">
-                <div class="project-card">
-                    <h3 class="project-title">Control de robots a través de gafas de realidad aumentada</h3>
-                    <p class="project-desc">Con el fin de generar interfaces más amigables y que mejoren la experiencia de uso de un operador de robots, se crea este proyecto proveyendo una interfaz que se visualiza a través de un visor Meta Quest 2, haciendo que la interacción del operador con el robot sea más dinámica e inmersiva y a su vez facilite la forma de dar instrucciones al robot para moverse, sin tener mucho conocimiento de cómo funciona el mismo. El proyecto realizado integra Meta Quest 2, Python, Unity y el robot Universal UR3.</p>
-                    
-                    <!-- Bloque de autores -->
-                    <div class="project-authors">
-                        <div class="project-authors-label">✦ Autores del proyecto</div>
-                        <div class="author-chip">
-                            <span class="author-name">Fredy Chaparro</span>
-                            <a href="mailto:f.chaparroc@uniandes.edu.co" class="author-email">f.chaparroc@uniandes.edu.co</a>
-                        </div>
-                        <!-- Agrega más author-chip aquí si hay más autores -->
-                    </div>
+    <div class="chips chips--carrusel" style="margin-bottom: 24px;"
+         data-filtros data-objetivo="#baraja-equipos">
+      <button class="chip" type="button" data-categoria-filtro="todos" aria-pressed="true">Todos</button>
+      <button class="chip" type="button" data-categoria-filtro="robotica" aria-pressed="false">Robótica</button>
+      <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Manufactura aditiva</button>
+      <button class="chip" type="button" data-categoria-filtro="ar" aria-pressed="false">Realidad mixta</button>
+      <button class="chip" type="button" data-categoria-filtro="computo" aria-pressed="false">Cómputo</button>
+    </div>
 
-                    <div class="project-media">
-                        <a href="https://www.youtube.com/watch?v=PdZfdl40pkA" target="_blank" rel="noopener noreferrer" style="display:block; width:100%; height:100%; position:relative; background:#000; text-decoration:none;">
-                            <img src="https://img.youtube.com/vi/PdZfdl40pkA/maxresdefault.jpg" alt="Control de robots a través de gafas de realidad aumentada" style="width:100%; height:100%; object-fit:cover; display:block; opacity:0.85; transition: opacity 0.3s ease;">
-                            <div style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:72px; height:72px; background:rgba(255,0,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow: 0 4px 20px rgba(0,0,0,0.6); transition: transform 0.2s ease, background 0.2s ease;">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="32px" height="32px" style="margin-left:4px;">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </div>
-                            <div style="position:absolute; bottom:0; left:0; right:0; padding:16px 20px; background:linear-gradient(transparent, rgba(0,0,0,0.8)); color:#fff; font-size:14px; font-family:'Inter',sans-serif; font-weight:500;">
-                                ▶ Ver en YouTube
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </details>
+    <div class="baraja" id="baraja-equipos" data-carrusel data-mandos="#mandos-equipos">
+      <article class="baraja__carta" data-carta data-categoria="robotica">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;">
+          <span class="ficha__modelo">UR3 · UR30</span>
+          <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 20px; color: var(--acento-marca);">
+          <path d="M5 20h14M7 20v-6M7 14l6-7M13 7l5 4M18 11v4"/>
+        </svg>
+        <h3 class="baraja__titulo">Brazos robóticos</h3>
+        <p class="tarjeta__texto">Cobots Universal Robots para integración y pruebas de automatización.</p>
+        <a class="baraja__cta" href="pages/equipos.html">Reservar</a>
+      </article>
 
-        <details class="research-dropdown">
-            <summary class="research-summary">Proyectos de Pregrado</summary>
-            
-            <!-- <div class="projects-container">
-                <div class="project-card">
-                    <h3 class="project-title">Realidad Aumentada en Tareas de Bodega</h3>
-                    <p class="project-desc">Aplicación de tecnología de realidad aumentada para apoyar al operario en tareas de ubicación de cajas, modelando escenarios como un problema de la mochila (knapsack problem).</p>
+      <article class="baraja__carta" data-carta data-categoria="fabricacion">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;">
+          <span class="ficha__modelo">Bambulab H2D · X1C</span>
+          <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 20px; color: var(--acento-marca);">
+          <path d="M4 4h16v5H4zM12 9v4M6 20l6-7 6 7z"/>
+        </svg>
+        <h3 class="baraja__titulo">Impresión 3D</h3>
+        <p class="tarjeta__texto">Manufactura aditiva avanzada para prototipado rápido y preciso.</p>
+        <a class="baraja__cta" href="pages/equipos.html">Reservar</a>
+      </article>
 
-                    <div class="project-authors">
-                        <div class="project-authors-label">✦ Autores del proyecto</div>
-                        <div class="author-chip">
-                            <span class="author-name">Nombre del autor</span>
-                            <a href="mailto:correo@uniandes.edu.co" class="author-email">correo@uniandes.edu.co</a>
-                        </div>
-                    </div>
+      <article class="baraja__carta" data-carta data-categoria="ar">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;">
+          <span class="ficha__modelo">HoloLens 2</span>
+          <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 20px; color: var(--acento-marca);">
+          <path d="M2 9h20v6h-7l-3 3-3-3H2z"/>
+        </svg>
+        <h3 class="baraja__titulo">Realidad aumentada</h3>
+        <p class="tarjeta__texto">Gafas Microsoft para interactuar con hologramas en entornos mixtos.</p>
+        <a class="baraja__cta" href="pages/equipos.html">Reservar</a>
+      </article>
 
-                    <div class="project-media">
-                        <video controls playsinline>
-                            <source src="ruta_al_video_pregrado.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div> -->
-        </details>
-    </section>
+      <article class="baraja__carta" data-carta data-categoria="computo">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;">
+          <span class="ficha__modelo">Workstation</span>
+          <span class="marca-estado">Acceso directo</span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 20px; color: var(--acento-marca);">
+          <path d="M3 5h18v11H3zM8 20h8M12 16v4"/>
+        </svg>
+        <h3 class="baraja__titulo">Cómputo de alto rendimiento</h3>
+        <p class="tarjeta__texto">Simulaciones complejas, modelado 3D y algoritmos de optimización.</p>
+        <a class="baraja__cta" href="pages/equipos.html">Reservar</a>
+      </article>
 
-    <section id="capacitaciones">
-        <h2>Capacitaciones</h2>
-    </section>
+      <article class="baraja__carta" data-carta data-categoria="computo">
+        <div style="display: flex; justify-content: space-between; gap: 12px; align-items: flex-start;">
+          <span class="ficha__modelo">Posgrado</span>
+          <span class="marca-estado">Acceso directo</span>
+        </div>
+        <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-top: 20px; color: var(--acento-marca);">
+          <path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/>
+        </svg>
+        <h3 class="baraja__titulo">Estación de posgrado</h3>
+        <p class="tarjeta__texto">Entrenamiento de modelos complejos y análisis de datos robustos.</p>
+        <a class="baraja__cta" href="pages/equipos.html">Reservar</a>
+      </article>
+    </div>
 
+    <div class="carrusel-mandos" id="mandos-equipos">
+      <button class="mando" type="button" data-anterior>
+        <span class="oculto-visual">Equipo anterior</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="puntos">
+        <button class="punto" type="button" data-ir-a="0"><span class="oculto-visual">Brazos robóticos</span></button>
+        <button class="punto" type="button" data-ir-a="1"><span class="oculto-visual">Impresión 3D</span></button>
+        <button class="punto" type="button" data-ir-a="2"><span class="oculto-visual">Realidad aumentada</span></button>
+        <button class="punto" type="button" data-ir-a="3"><span class="oculto-visual">Cómputo de alto rendimiento</span></button>
+        <button class="punto" type="button" data-ir-a="4"><span class="oculto-visual">Estación de posgrado</span></button>
+      </div>
+      <button class="mando" type="button" data-siguiente>
+        <span class="oculto-visual">Equipo siguiente</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+      <span class="contador" data-contador aria-live="polite">1 de 5</span>
+    </div>
+  </section>
+
+  <!-- ===================== Líneas de trabajo ===================== -->
+  <section class="seccion contenedor" aria-labelledby="t-lineas">
+    <h2 id="t-lineas" style="margin-bottom: 24px;">En qué trabajamos</h2>
+    <div class="rejilla rejilla--3">
+      <article class="tarjeta tarjeta--alzable">
+        <span class="tarjeta__numero">01</span>
+        <h3>Robótica</h3>
+        <p class="tarjeta__texto">
+          Diseño, programación y control de sistemas robóticos aplicados a la
+          automatización de procesos logísticos.
+        </p>
+        <a href="pages/investigacion.html#linea-1">Ver la línea</a>
+      </article>
+
+      <article class="tarjeta tarjeta--alzable">
+        <span class="tarjeta__numero">02</span>
+        <h3>Impresión 3D</h3>
+        <p class="tarjeta__texto">
+          Proyectos aplicados a la manufactura aditiva, con investigación en nuevos
+          materiales y enfoques pedagógicos.
+        </p>
+        <a href="pages/investigacion.html#linea-2">Ver la línea</a>
+      </article>
+
+      <article class="tarjeta tarjeta--alzable">
+        <span class="tarjeta__numero">03</span>
+        <h3>IA en sistemas ciberfísicos</h3>
+        <p class="tarjeta__texto">
+          Análisis de datos, inteligencia artificial y algoritmos de optimización para
+          simular operaciones industriales reales.
+        </p>
+        <a href="pages/investigacion.html#linea-3">Ver la línea</a>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__alto">
+      <div class="pie__col pie__col--ancha">
+        <a class="marca" href="index.html" style="color: #fff;">
+          <img src="assets/img/logo-aia-blanco.png" alt="" width="44" height="57">
+          <span>
+            <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+            <span class="marca__sub">Ingeniería Industrial · Uniandes</span>
+          </span>
+        </a>
+        <p class="pie__texto">
+          El laboratorio de Industria 4.0 de Ingeniería Industrial de la Universidad de
+          los Andes. Robótica, manufactura aditiva, realidad aumentada e inteligencia
+          artificial aplicada a operaciones reales.
+        </p>
+      </div>
+
+      <nav class="pie__col" aria-label="Pie de página">
+        <span class="pie__titulo-col">Navegación</span>
+        <a href="index.html">AIA</a>
+        <a href="pages/laboratorio.html">El laboratorio</a>
+        <a href="pages/laboratorio.html#nuestra-gente">Nuestra gente</a>
+        <a href="pages/equipos.html">Equipos</a>
+        <a href="pages/investigacion.html">Investigación</a>
+        <a href="pages/eventos.html">Eventos</a>
+      </nav>
+
+      <div class="pie__col">
+        <span class="pie__titulo-col">Horario de atención</span>
+        <div>
+          <div style="font-size: 0.8125rem; color: rgba(255,255,255,0.72);">Lunes a viernes</div>
+          <div class="pie__dato-grande">8:00 a.m. – 6:00 p.m.</div>
+        </div>
+        <p class="pie__aviso">
+          Solo se puede entrar dentro de estas horas, con personal del AIA presente.
+        </p>
+        <a href="pages/laboratorio.html#horario" style="color: var(--acento-marca); font-weight: 700; font-size: 0.8125rem;">Ver el horario completo →</a>
+      </div>
+
+      <div class="pie__col">
+        <span class="pie__titulo-col">Dónde y con quién</span>
+        <div>
+          <div class="pie__dato-grande">ML 508</div>
+          <div style="font-size: 0.8125rem; line-height: 1.55; color: rgba(255,255,255,0.72);">
+            Edificio Mario Laserna, quinto piso<br>Universidad de los Andes, Bogotá
+          </div>
+        </div>
+        <a href="mailto:aiaindustrial@uniandes.edu.co">aiaindustrial@uniandes.edu.co</a>
+        <span style="font-size: 0.8125rem; color: rgba(255,255,255,0.46);">También al equipo por Microsoft Teams</span>
+      </div>
+    </div>
+
+    <div class="pie__bajo">
+      <span>Universidad de los Andes · Facultad de Ingeniería · Departamento de Ingeniería Industrial</span>
+      <a href="pages/equipos.html" style="font-weight: 600;">Reservar un equipo</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/tema.js" defer></script>
+<script src="js/menu.js" defer></script>
+<script src="js/filtros.js" defer></script>
+<script src="js/carrusel.js" defer></script>
 </body>
 </html>

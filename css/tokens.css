@@ -1,0 +1,143 @@
+/* ===========================================================================
+   AIA Uniandes — Tokens de diseño
+   Fuente única de los valores del sistema. Todo lo demás los consume.
+   El tema se conmuta con data-tema="claro" | "oscuro" en <html>; el guion
+   en línea del <head> lo estampa antes de pintar para que no haya parpadeo.
+   =========================================================================== */
+
+:root {
+  color-scheme: light;
+
+  /* --- tipografía --- */
+  --display: 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --cuerpo: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
+
+  /* --- fondos --- */
+  --fondo: #eef1f5;
+  --fondo-brillo: radial-gradient(760px 460px at 82% 4%, rgba(90, 192, 204, 0.18), transparent 68%),
+                  radial-gradient(620px 420px at 6% 30%, rgba(23, 41, 68, 0.08), transparent 70%);
+  --fondo-trama: none;
+  --fondo-trama-tam: auto;
+  --panel: rgba(255, 255, 255, 0.88);
+  --panel-solido: #ffffff;
+  --panel-encabezado: rgba(255, 255, 255, 0.72);
+  --superficie: rgba(23, 41, 68, 0.05);
+  --placa: linear-gradient(158deg, #1e3454, #172944);
+  --marco-media: #dde3ea;
+
+  /* --- bordes --- */
+  --borde: rgba(23, 41, 68, 0.09);
+  --borde-suave: rgba(23, 41, 68, 0.07);
+  --borde-chip: rgba(23, 41, 68, 0.14);
+
+  /* --- texto --- */
+  --texto: #172944;
+  --texto-2: #5a6c85;
+  --texto-3: #7c8ca3;
+  --texto-sobre-placa: #ffffff;
+  --texto-2-sobre-placa: rgba(255, 255, 255, 0.72);
+
+  /* --- acento ---
+     #5AC0CC es el teal de la marca. Sobre fondo claro NO alcanza el contraste
+     mínimo para texto, así que el acento de texto se oscurece a #0F7C8A y el
+     teal de marca queda solo como relleno con texto oscuro encima. */
+  --acento: #0f7c8a;
+  --acento-marca: #5ac0cc;
+  --acento-tinte: rgba(90, 192, 204, 0.16);
+  --sobre-acento-marca: #0b2e33;
+
+  /* --- acción primaria --- */
+  --primario-fondo: #172944;
+  --primario-texto: #ffffff;
+  --primario-sombra: 0 12px 26px rgba(23, 41, 68, 0.24);
+
+  /* --- sombras --- */
+  --sombra: 0 16px 36px rgba(23, 41, 68, 0.09);
+  --sombra-alta: 0 44px 78px rgba(23, 41, 68, 0.34);
+  --sombra-placa: 0 40px 70px rgba(0, 0, 0, 0.3);
+
+  /* --- aviso --- */
+  --aviso-fondo: rgba(255, 255, 255, 0.88);
+  --aviso-borde: rgba(240, 171, 0, 0.4);
+  --aviso-icono: #8a6200;
+
+  /* --- horario: un color por persona de turno --- */
+  --fredy-fondo: rgba(90, 192, 204, 0.24);
+  --fredy-texto: #0c5b66;
+  --danna-fondo: rgba(126, 184, 106, 0.26);
+  --danna-texto: #3b6630;
+  --felipe-fondo: rgba(240, 171, 0, 0.26);
+  --felipe-texto: #755300;
+  --celda-vacia: rgba(23, 41, 68, 0.035);
+
+  /* --- pie --- */
+  --pie-fondo: #172944;
+
+  /* --- radios --- */
+  --r-chico: 8px;
+  --r-control: 12px;
+  --r-medio: 14px;
+  --r-tarjeta: 20px;
+  --r-panel: 24px;
+  --r-pildora: 999px;
+
+  /* --- medidas --- */
+  --ancho-max: 1360px;
+  --margen-lateral: 44px;
+  --toque-min: 44px;
+}
+
+[data-tema='oscuro'] {
+  color-scheme: dark;
+
+  --fondo: #070e17;
+  --fondo-brillo: radial-gradient(820px 460px at 78% 2%, rgba(90, 192, 204, 0.14), transparent 66%);
+  --fondo-trama: linear-gradient(rgba(90, 192, 204, 0.04) 1px, transparent 1px),
+                 linear-gradient(90deg, rgba(90, 192, 204, 0.04) 1px, transparent 1px);
+  --fondo-trama-tam: 64px 64px;
+  --panel: rgba(16, 31, 46, 0.62);
+  --panel-solido: #0e1b29;
+  --panel-encabezado: rgba(16, 31, 46, 0.5);
+  --superficie: rgba(255, 255, 255, 0.06);
+  --marco-media: #0b1826;
+
+  --borde: rgba(90, 192, 204, 0.18);
+  --borde-suave: rgba(90, 192, 204, 0.12);
+  --borde-chip: rgba(90, 192, 204, 0.25);
+
+  --texto: #ffffff;
+  --texto-2: #8fa2b6;
+  --texto-3: #55697e;
+
+  --acento: #5ac0cc;
+
+  --primario-fondo: #5ac0cc;
+  --primario-texto: #06111c;
+  --primario-sombra: 0 12px 26px rgba(0, 0, 0, 0.4);
+
+  --sombra: 0 18px 40px rgba(0, 0, 0, 0.34);
+  --sombra-alta: 0 44px 78px rgba(0, 0, 0, 0.5);
+  --sombra-placa: 0 40px 70px rgba(0, 0, 0, 0.5);
+
+  --aviso-fondo: rgba(240, 171, 0, 0.07);
+  --aviso-borde: rgba(240, 171, 0, 0.3);
+  --aviso-icono: #f0ab00;
+
+  --fredy-fondo: rgba(90, 192, 204, 0.16);
+  --fredy-texto: #7fd3dd;
+  --danna-fondo: rgba(126, 184, 106, 0.16);
+  --danna-texto: #96ce80;
+  --felipe-fondo: rgba(240, 171, 0, 0.16);
+  --felipe-texto: #efbb4a;
+  --celda-vacia: rgba(255, 255, 255, 0.03);
+
+  --pie-fondo: #050b13;
+}
+
+@media (max-width: 720px) {
+  :root {
+    --margen-lateral: 14px;
+    --fondo-trama-tam: 48px 48px;
+  }
+}

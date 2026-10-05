@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="es" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Líneas de investigación y proyectos | AIA Uniandes</title>
+<meta name="description" content="Las líneas de investigación del laboratorio AIA: robótica y automatización, manufactura aditiva, e inteligencia artificial en sistemas ciberfísicos. Proyectos de estudiantes con su descripción, demo y publicación.">
+<link rel="canonical" href="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/investigacion.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Ambiente Integrado de Aprendizaje — Uniandes">
+<meta property="og:title" content="Líneas de investigación y proyectos | AIA Uniandes">
+<meta property="og:description" content="Robótica y automatización, manufactura aditiva e IA en sistemas ciberfísicos, con los proyectos de cada línea.">
+<meta property="og:url" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/investigacion.html">
+<meta property="og:image" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/Oficial_Images/LogoAIA.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/img/logo-aia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/componentes.css">
+
+<script>
+  (function () {
+    try {
+      var g = localStorage.getItem('aia-tema');
+      if (!g) g = matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      document.documentElement.setAttribute('data-tema', g);
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="encabezado">
+  <div class="contenedor">
+    <div class="encabezado__barra">
+      <a class="marca" href="../index.html">
+        <img src="../assets/img/logo-aia.png" alt="" width="38" height="49">
+        <span>
+          <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+          <span class="marca__sub">Uniandes / Ing. Industrial / ML&nbsp;508</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__enlace" href="../index.html">AIA</a>
+        <a class="nav__enlace" href="laboratorio.html">Laboratorio</a>
+        <a class="nav__enlace" href="equipos.html">Equipos</a>
+        <a class="nav__enlace" href="investigacion.html" aria-current="page">Investigación</a>
+        <a class="nav__enlace" href="eventos.html">Eventos</a>
+        <div class="tema" role="group" aria-label="Tema de color">
+          <button class="tema__boton" type="button" data-poner-tema="claro" aria-pressed="true">Claro</button>
+          <button class="tema__boton" type="button" data-poner-tema="oscuro" aria-pressed="false">Oscuro</button>
+        </div>
+        <a class="boton boton--primario boton--compacto" href="equipos.html">Reservar</a>
+      </nav>
+      <button class="menu-boton" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil">
+        <span class="oculto-visual">Abrir menú</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-movil" id="menu-movil" data-menu-panel data-abierto="no">
+    <div class="nav-movil__pista">
+      <a class="chip" href="../index.html">AIA</a>
+      <a class="chip" href="laboratorio.html">Laboratorio</a>
+      <a class="chip" href="equipos.html">Equipos</a>
+      <a class="chip" href="investigacion.html" aria-current="page">Investigación</a>
+      <a class="chip" href="eventos.html">Eventos</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="seccion contenedor">
+    <nav class="migas" aria-label="Ruta">
+      <a href="../index.html">Inicio</a>
+      <span class="migas__sep" aria-hidden="true">/</span>
+      <span class="migas__actual" aria-current="page">Investigación</span>
+    </nav>
+
+    <div class="seccion__cabeza">
+      <h1>Líneas de investigación, y lo que se ha desarrollado</h1>
+      <p class="apoyo">
+        El laboratorio trabaja en varios frentes. Cada proyecto de curso, de grado o de
+        investigación pertenece a uno de ellos, con su descripción, su demo y su
+        publicación cuando la tiene.
+      </p>
+    </div>
+
+    <nav class="chips chips--carrusel" aria-label="Ir a una línea">
+      <a class="chip" href="#linea-1">01 · Robótica y automatización</a>
+      <a class="chip" href="#linea-2">02 · Manufactura aditiva</a>
+      <a class="chip" href="#linea-3">03 · IA en sistemas ciberfísicos</a>
+    </nav>
+  </section>
+
+  <!-- ===================== Línea 01 ===================== -->
+  <section class="seccion contenedor" id="linea-1" aria-labelledby="t-linea-1">
+    <div class="panel" style="margin-bottom: 24px;">
+      <span class="etiqueta">Línea 01</span>
+      <h2 id="t-linea-1" style="margin-top: 12px;">Robótica y automatización</h2>
+      <p class="apoyo" style="margin-top: 12px; max-width: 58em;">
+        Diseño, programación y control de sistemas robóticos aplicados a la automatización
+        de procesos logísticos. Los estudiantes trabajan sobre cobots reales — no sobre
+        simuladores — e integran los brazos con visión, realidad aumentada y modelos de
+        optimización.
+      </p>
+      <div class="chips" style="gap: 8px; margin-top: 18px;">
+        <span class="etiqueta-tec">Universal Robots UR3</span>
+        <span class="etiqueta-tec">Universal Robots UR30</span>
+        <span class="etiqueta-tec">HoloLens 2</span>
+        <span class="etiqueta-tec">Meta Quest 2</span>
+      </div>
+    </div>
+
+    <h3 style="margin-bottom: 16px;">Proyectos de esta línea</h3>
+
+    <article class="ficha" style="grid-template-columns: 0.92fr 1.08fr;">
+      <a class="ficha__media" href="https://www.youtube.com/watch?v=PdZfdl40pkA" target="_blank" rel="noopener" style="background: var(--placa); padding: 0;">
+        <img src="https://img.youtube.com/vi/PdZfdl40pkA/maxresdefault.jpg" alt="Operador controlando un brazo robótico UR3 con gafas de realidad aumentada" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+        <span style="position: absolute; display: flex; align-items: center; justify-content: center; width: 76px; height: 76px; border-radius: 50%; background: rgba(90,192,204,0.92); box-shadow: 0 14px 34px rgba(0,0,0,0.4);">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="#0B2E33" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg>
+        </span>
+        <span class="ficha__media-nota" style="color: rgba(255,255,255,0.72);">Ver en YouTube</span>
+      </a>
+      <div class="ficha__cuerpo" style="padding: 36px 38px;">
+        <div class="evento__meta">
+          <span class="evento__tag">Posgrado</span>
+          <span class="evento__fecha">Proyecto de grado</span>
+        </div>
+        <h4 style="font-family: var(--display); font-size: 1.8125rem; font-weight: 700; letter-spacing: -0.035em; line-height: 1.12;">
+          Control de robots a través de gafas de realidad aumentada
+        </h4>
+        <p class="apoyo">
+          Con el fin de generar interfaces más amigables para el operador de robots, el
+          proyecto provee una interfaz que se visualiza a través de un visor Meta Quest 2:
+          la interacción se vuelve más dinámica e inmersiva, y dar instrucciones de
+          movimiento deja de exigir conocer a fondo el equipo. Integra Meta Quest 2,
+          Python, Unity y el robot Universal UR3.
+        </p>
+        <div class="chips" style="gap: 8px;">
+          <span class="etiqueta-tec">Meta Quest 2</span>
+          <span class="etiqueta-tec">Unity</span>
+          <span class="etiqueta-tec">Python</span>
+          <span class="etiqueta-tec">Universal Robots UR3</span>
+        </div>
+        <div class="rejilla rejilla--2" style="gap: 14px; margin-top: 4px;">
+          <div style="display: flex; flex-direction: column; gap: 5px; padding: 15px 17px; background: var(--superficie); border-radius: 13px;">
+            <span class="etiqueta" style="font-size: 0.5625rem; color: var(--texto-3);">Autor</span>
+            <strong style="font-family: var(--display); letter-spacing: -0.02em;">Fredy Chaparro</strong>
+            <a class="menudo" href="mailto:f.chaparroc@uniandes.edu.co" style="color: var(--acento); font-weight: 600;">f.chaparroc@uniandes.edu.co</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 5px; padding: 15px 17px; background: var(--superficie); border-radius: 13px;">
+            <span class="etiqueta" style="font-size: 0.5625rem; color: var(--texto-3);">Publicación</span>
+            <span style="font-family: var(--display); font-weight: 700; color: var(--texto-3);">[PENDIENTE]</span>
+          </div>
+        </div>
+        <a class="boton boton--primario" style="align-self: flex-start; margin-top: 4px;" href="https://www.youtube.com/watch?v=PdZfdl40pkA" target="_blank" rel="noopener">Ver el video</a>
+      </div>
+    </article>
+
+    <h3 style="margin: 32px 0 16px;">Demos de la línea</h3>
+    <div class="rejilla rejilla--3">
+      <figure style="margin: 0;">
+        <video class="placa" style="width: 100%; aspect-ratio: 16/9;" controls preload="none">
+          <source src="../assets/video/demos/robots-simulacion.mp4" type="video/mp4">
+        </video>
+        <figcaption class="menudo" style="margin-top: 8px;">Robots en simulación</figcaption>
+      </figure>
+      <figure style="margin: 0;">
+        <video class="placa" style="width: 100%; aspect-ratio: 16/9;" controls preload="none">
+          <source src="../assets/video/demos/ur10-operacion-3.mp4" type="video/mp4">
+        </video>
+        <figcaption class="menudo" style="margin-top: 8px;">UR10 en operación</figcaption>
+      </figure>
+      <figure style="margin: 0;">
+        <video class="placa" style="width: 100%; aspect-ratio: 16/9;" controls preload="none">
+          <source src="../assets/video/demos/estudiantes-robot.mp4" type="video/mp4">
+        </video>
+        <figcaption class="menudo" style="margin-top: 8px;">Estudiantes operando el robot</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== Línea 02 ===================== -->
+  <section class="seccion contenedor" id="linea-2" aria-labelledby="t-linea-2">
+    <div class="panel" style="margin-bottom: 24px;">
+      <span class="etiqueta">Línea 02</span>
+      <h2 id="t-linea-2" style="margin-top: 12px;">Manufactura aditiva</h2>
+      <p class="apoyo" style="margin-top: 12px; max-width: 58em;">
+        Desarrollo de proyectos aplicados a la manufactura aditiva, con investigación en
+        nuevos materiales y en enfoques pedagógicos para enseñar prototipado. Cubre desde
+        el diseño de la pieza hasta su fabricación y prueba funcional.
+      </p>
+      <div class="chips" style="gap: 8px; margin-top: 18px;">
+        <span class="etiqueta-tec">Bambulab X1 Carbon</span>
+        <span class="etiqueta-tec">Bambulab H2D</span>
+      </div>
+    </div>
+
+    <div class="vacio">
+      <div>
+        <h3>Todavía no hay proyectos publicados en esta línea</h3>
+        <p class="apoyo" style="margin-top: 8px;">
+          Si hiciste un proyecto de curso, de grado o de investigación en manufactura
+          aditiva, escríbenos y lo publicamos aquí con tu nombre, tu descripción, tu demo
+          y tu publicación.
+        </p>
+      </div>
+      <a class="boton boton--secundario" href="mailto:aiaindustrial@uniandes.edu.co">Enviar mi proyecto</a>
+    </div>
+  </section>
+
+  <!-- ===================== Línea 03 ===================== -->
+  <section class="seccion contenedor" id="linea-3" aria-labelledby="t-linea-3">
+    <div class="panel" style="margin-bottom: 24px;">
+      <span class="etiqueta">Línea 03</span>
+      <h2 id="t-linea-3" style="margin-top: 12px;">IA en sistemas ciberfísicos</h2>
+      <p class="apoyo" style="margin-top: 12px; max-width: 58em;">
+        Implementación de modelos de análisis de datos, inteligencia artificial y
+        algoritmos de optimización para simular sistemas y operaciones industriales
+        reales. Es la línea que conecta la ingeniería industrial clásica con la capacidad
+        de cómputo del laboratorio.
+      </p>
+      <div class="chips" style="gap: 8px; margin-top: 18px;">
+        <span class="etiqueta-tec">Cómputo de alto rendimiento</span>
+        <span class="etiqueta-tec">Estación de posgrado</span>
+      </div>
+    </div>
+
+    <div class="vacio" style="margin-bottom: 24px;">
+      <div>
+        <h3>Todavía no hay proyectos publicados en esta línea</h3>
+        <p class="apoyo" style="margin-top: 8px;">
+          Si trabajaste con analítica, inteligencia artificial u optimización en el
+          laboratorio, escríbenos y lo publicamos aquí.
+        </p>
+      </div>
+      <a class="boton boton--secundario" href="mailto:aiaindustrial@uniandes.edu.co">Enviar mi proyecto</a>
+    </div>
+
+    <h3 style="margin-bottom: 16px;">Demos de la línea</h3>
+    <div class="rejilla rejilla--2">
+      <figure style="margin: 0;">
+        <video class="placa" style="width: 100%; aspect-ratio: 16/9;" controls preload="none">
+          <source src="../assets/video/demos/simulacion-operaciones.mp4" type="video/mp4">
+        </video>
+        <figcaption class="menudo" style="margin-top: 8px;">Simulación de operaciones</figcaption>
+      </figure>
+      <figure style="margin: 0;">
+        <video class="placa" style="width: 100%; aspect-ratio: 16/9;" controls preload="none">
+          <source src="../assets/video/demos/humanoide.mp4" type="video/mp4">
+        </video>
+        <figcaption class="menudo" style="margin-top: 8px;">Robot humanoide</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="seccion contenedor">
+    <div class="aviso" style="border-color: var(--borde); background: var(--panel);">
+      <div class="aviso__cuerpo">
+        <h3>¿Tu proyecto usó los equipos del laboratorio?</h3>
+        <p class="apoyo">
+          Publicamos proyectos de curso, de grado y de investigación con el nombre de sus
+          autores, su demo, su descripción y su publicación. Es la manera de que tu
+          trabajo quede visible más allá del semestre — y de que el laboratorio aparezca
+          en búsquedas.
+        </p>
+      </div>
+      <a class="boton boton--primario" href="mailto:aiaindustrial@uniandes.edu.co">Escríbenos</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__alto">
+      <div class="pie__col pie__col--ancha">
+        <a class="marca" href="../index.html" style="color: #fff;">
+          <img src="../assets/img/logo-aia-blanco.png" alt="" width="44" height="57">
+          <span>
+            <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+            <span class="marca__sub">Ingeniería Industrial · Uniandes</span>
+          </span>
+        </a>
+        <p class="pie__texto">El laboratorio de Industria 4.0 de Ingeniería Industrial de la Universidad de los Andes. Robótica, manufactura aditiva, realidad aumentada e inteligencia artificial aplicada a operaciones reales.</p>
+      </div>
+      <nav class="pie__col" aria-label="Pie de página">
+        <span class="pie__titulo-col">Navegación</span>
+        <a href="../index.html">AIA</a>
+        <a href="laboratorio.html">El laboratorio</a>
+        <a href="laboratorio.html#nuestra-gente">Nuestra gente</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="eventos.html">Eventos</a>
+      </nav>
+      <div class="pie__col">
+        <span class="pie__titulo-col">Horario de atención</span>
+        <div>
+          <div style="font-size: 0.8125rem; color: rgba(255,255,255,0.72);">Lunes a viernes</div>
+          <div class="pie__dato-grande">8:00 a.m. – 6:00 p.m.</div>
+        </div>
+        <p class="pie__aviso">Solo se puede entrar dentro de estas horas, con personal del AIA presente.</p>
+        <a href="laboratorio.html#horario" style="color: var(--acento-marca); font-weight: 700; font-size: 0.8125rem;">Ver el horario completo →</a>
+      </div>
+      <div class="pie__col">
+        <span class="pie__titulo-col">Dónde y con quién</span>
+        <div>
+          <div class="pie__dato-grande">ML 508</div>
+          <div style="font-size: 0.8125rem; line-height: 1.55; color: rgba(255,255,255,0.72);">Edificio Mario Laserna, quinto piso<br>Universidad de los Andes, Bogotá</div>
+        </div>
+        <a href="mailto:aiaindustrial@uniandes.edu.co">aiaindustrial@uniandes.edu.co</a>
+        <span style="font-size: 0.8125rem; color: rgba(255,255,255,0.46);">También al equipo por Microsoft Teams</span>
+      </div>
+    </div>
+    <div class="pie__bajo">
+      <span>Universidad de los Andes · Facultad de Ingeniería · Departamento de Ingeniería Industrial</span>
+      <a href="equipos.html" style="font-weight: 600;">Reservar un equipo</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/tema.js" defer></script>
+<script src="../js/menu.js" defer></script>
+</body>
+</html>

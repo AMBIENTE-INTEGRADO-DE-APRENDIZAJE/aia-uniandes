@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="es" data-tema="claro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Equipos para reservar: robots, impresión 3D y realidad aumentada | AIA Uniandes</title>
+<meta name="description" content="Catálogo de equipos del laboratorio AIA: cobots Universal Robots UR3 y UR30, impresoras Bambulab H2D y X1 Carbon, gafas HoloLens 2 y estaciones de cómputo de alto rendimiento. Reserva sin costo para estudiantes de Uniandes.">
+<link rel="canonical" href="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/equipos.html">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CO">
+<meta property="og:site_name" content="Ambiente Integrado de Aprendizaje — Uniandes">
+<meta property="og:title" content="Equipos para reservar | AIA Uniandes">
+<meta property="og:description" content="Cobots UR3 y UR30, impresión 3D Bambulab, HoloLens 2 y cómputo de alto rendimiento. Reserva sin costo.">
+<meta property="og:url" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/equipos.html">
+<meta property="og:image" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/Oficial_Images/LogoAIA.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="../assets/img/logo-aia.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="../css/tokens.css">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/componentes.css">
+
+<script>
+  (function () {
+    try {
+      var g = localStorage.getItem('aia-tema');
+      if (!g) g = matchMedia('(prefers-color-scheme: dark)').matches ? 'oscuro' : 'claro';
+      document.documentElement.setAttribute('data-tema', g);
+    } catch (e) {}
+  })();
+</script>
+</head>
+
+<body>
+<a class="saltar" href="#contenido">Saltar al contenido</a>
+
+<header class="encabezado">
+  <div class="contenedor">
+    <div class="encabezado__barra">
+      <a class="marca" href="../index.html">
+        <img src="../assets/img/logo-aia.png" alt="" width="38" height="49">
+        <span>
+          <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+          <span class="marca__sub">Uniandes / Ing. Industrial / ML&nbsp;508</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Principal">
+        <a class="nav__enlace" href="../index.html">AIA</a>
+        <a class="nav__enlace" href="laboratorio.html">Laboratorio</a>
+        <a class="nav__enlace" href="equipos.html" aria-current="page">Equipos</a>
+        <a class="nav__enlace" href="investigacion.html">Investigación</a>
+        <a class="nav__enlace" href="eventos.html">Eventos</a>
+        <div class="tema" role="group" aria-label="Tema de color">
+          <button class="tema__boton" type="button" data-poner-tema="claro" aria-pressed="true">Claro</button>
+          <button class="tema__boton" type="button" data-poner-tema="oscuro" aria-pressed="false">Oscuro</button>
+        </div>
+        <a class="boton boton--primario boton--compacto" href="#catalogo">Reservar</a>
+      </nav>
+      <button class="menu-boton" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil">
+        <span class="oculto-visual">Abrir menú</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="nav-movil" id="menu-movil" data-menu-panel data-abierto="no">
+    <div class="nav-movil__pista">
+      <a class="chip" href="../index.html">AIA</a>
+      <a class="chip" href="laboratorio.html">Laboratorio</a>
+      <a class="chip" href="equipos.html" aria-current="page">Equipos</a>
+      <a class="chip" href="investigacion.html">Investigación</a>
+      <a class="chip" href="eventos.html">Eventos</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <section class="seccion contenedor">
+    <nav class="migas" aria-label="Ruta">
+      <a href="../index.html">Inicio</a>
+      <span class="migas__sep" aria-hidden="true">/</span>
+      <span class="migas__actual" aria-current="page">Equipos</span>
+    </nav>
+
+    <div class="seccion__cabeza">
+      <h1>Todo lo que puedes reservar</h1>
+      <p class="apoyo">
+        Acceso sin costo para estudiantes de pregrado y posgrado de Uniandes.
+        La reserva se hace en línea y el uso es presencial en ML 508.
+      </p>
+    </div>
+
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 26px;">
+      <div class="chips chips--carrusel"
+           data-filtros data-objetivo="#catalogo" data-contador="#cuenta-equipos">
+        <button class="chip" type="button" data-categoria-filtro="todos" aria-pressed="true">Todos</button>
+        <button class="chip" type="button" data-categoria-filtro="robotica" aria-pressed="false">Robótica</button>
+        <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Manufactura aditiva</button>
+        <button class="chip" type="button" data-categoria-filtro="ar" aria-pressed="false">Realidad mixta</button>
+        <button class="chip" type="button" data-categoria-filtro="computo" aria-pressed="false">Cómputo</button>
+      </div>
+      <span class="contador" id="cuenta-equipos" aria-live="polite">5 de 5</span>
+    </div>
+  </section>
+
+  <section class="seccion seccion--corta contenedor" id="catalogo" aria-label="Catálogo de equipos">
+    <div class="columna" style="gap: 18px;">
+
+      <article class="ficha" data-categoria="robotica">
+        <div class="ficha__media">
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20h14M7 20v-6M7 14l6-7M13 7l5 4M18 11v4"/></svg>
+          <span class="ficha__media-nota">Foto pendiente — celda UR3</span>
+        </div>
+        <div class="ficha__cuerpo">
+          <div class="evento__meta">
+            <span class="ficha__modelo">Universal Robots UR3 · UR30</span>
+            <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+          </div>
+          <h2 style="font-size: 1.625rem;">Brazos robóticos colaborativos</h2>
+          <p class="apoyo">Cobots para la integración y las pruebas de automatización. Se programan desde el teach pendant o por script, y se combinan con las estaciones de cómputo del laboratorio.</p>
+          <div class="chips" style="gap: 8px;">
+            <span class="etiqueta-tec">Teach pendant</span>
+            <span class="etiqueta-tec">URScript</span>
+            <span class="etiqueta-tec">Pick and place</span>
+          </div>
+        </div>
+        <div class="ficha__accion">
+          <a class="boton boton--primario" href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/ZRsQf4GbTkqRZRGDBrn7rQ2?ismsaljsauthenabled" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="ficha" data-categoria="fabricacion">
+        <div class="ficha__media">
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v5H4zM12 9v4M6 20l6-7 6 7z"/></svg>
+          <span class="ficha__media-nota">Foto pendiente — impresora X1 Carbon</span>
+        </div>
+        <div class="ficha__cuerpo">
+          <div class="evento__meta">
+            <span class="ficha__modelo">Bambulab H2D · X1 Carbon</span>
+            <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+          </div>
+          <h2 style="font-size: 1.625rem;">Impresión 3D de manufactura aditiva</h2>
+          <p class="apoyo">Sistemas de manufactura aditiva avanzada para prototipado rápido y preciso. Aptos para piezas funcionales y para pruebas de materiales en proyectos de curso o de grado.</p>
+          <div class="chips" style="gap: 8px;">
+            <span class="etiqueta-tec">Prototipado rápido</span>
+            <span class="etiqueta-tec">Piezas funcionales</span>
+            <span class="etiqueta-tec">Pruebas de materiales</span>
+          </div>
+        </div>
+        <div class="ficha__accion">
+          <a class="boton boton--primario" href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/NX-PcvJX4E6l-NHRJQCd2Q2?ismsaljsauthenabled" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="ficha" data-categoria="ar">
+        <div class="ficha__media">
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h20v6h-7l-3 3-3-3H2z"/></svg>
+          <span class="ficha__media-nota">Foto pendiente — HoloLens 2</span>
+        </div>
+        <div class="ficha__cuerpo">
+          <div class="evento__meta">
+            <span class="ficha__modelo">Microsoft HoloLens 2</span>
+            <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
+          </div>
+          <h2 style="font-size: 1.625rem;">Gafas de realidad aumentada</h2>
+          <p class="apoyo">Para interactuar con hologramas y desarrollar proyectos en entornos mixtos, como guías visuales que apoyan al operario en tareas de bodega.</p>
+          <div class="chips" style="gap: 8px;">
+            <span class="etiqueta-tec">Entornos mixtos</span>
+            <span class="etiqueta-tec">Guías de operario</span>
+            <span class="etiqueta-tec">Unity</span>
+          </div>
+        </div>
+        <div class="ficha__accion">
+          <a class="boton boton--primario" href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/lj3ByoGkOEGEJ5ngOe0-zA2?ismsaljsauthenabled" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="ficha" data-categoria="computo">
+        <div class="ficha__media">
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
+          <span class="ficha__media-nota">Foto pendiente — estación de trabajo</span>
+        </div>
+        <div class="ficha__cuerpo">
+          <div class="evento__meta">
+            <span class="ficha__modelo">Workstation</span>
+            <span class="marca-estado">Acceso directo</span>
+          </div>
+          <h2 style="font-size: 1.625rem;">Estaciones de cómputo de alto rendimiento</h2>
+          <p class="apoyo">Diseñadas para procesar simulaciones complejas, modelado 3D y algoritmos de optimización que no corren cómodamente en un portátil.</p>
+          <div class="chips" style="gap: 8px;">
+            <span class="etiqueta-tec">Simulación</span>
+            <span class="etiqueta-tec">Modelado 3D</span>
+            <span class="etiqueta-tec">Optimización</span>
+          </div>
+        </div>
+        <div class="ficha__accion">
+          <a class="boton boton--primario" href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/BRoPo4ew7U-iPo3kA8K_7g2?ismsaljsauthenabled" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+      <article class="ficha" data-categoria="computo">
+        <div class="ficha__media">
+          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>
+          <span class="ficha__media-nota">Foto pendiente — estación de posgrado</span>
+        </div>
+        <div class="ficha__cuerpo">
+          <div class="evento__meta">
+            <span class="ficha__modelo">Workstation · Posgrado</span>
+            <span class="marca-estado">Acceso directo</span>
+          </div>
+          <h2 style="font-size: 1.625rem;">Estación de cómputo para posgrado</h2>
+          <p class="apoyo">Reservada para estudiantes de posgrado, dimensionada para el entrenamiento de modelos complejos y el análisis de datos robustos.</p>
+          <div class="chips" style="gap: 8px;">
+            <span class="etiqueta-tec">Entrenamiento de modelos</span>
+            <span class="etiqueta-tec">Análisis de datos</span>
+          </div>
+        </div>
+        <div class="ficha__accion">
+          <a class="boton boton--primario" href="https://outlook.office.com/book/ServiciodereservadeequiposdelAIA@uniandes.onmicrosoft.com/s/gIT4S7Dw0keV1Vyv1aAmOw2?ismsaljsauthenabled" target="_blank" rel="noopener">Reservar</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="seccion seccion--corta contenedor">
+    <div class="aviso" style="border-color: var(--borde); background: var(--panel); margin-bottom: 18px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--acento);">
+        <circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 112.4 3.3V14M12 17v.1"/>
+      </svg>
+      <div class="aviso__cuerpo">
+        <h3>¿No está el equipo que necesitas?</h3>
+        <p class="apoyo">Si el equipo que requieres no se encuentra en la lista, contáctanos y miramos si podemos conseguirlo o sugerirte una alternativa del laboratorio.</p>
+      </div>
+      <a class="boton boton--secundario" href="mailto:aiaindustrial@uniandes.edu.co">Contáctanos</a>
+    </div>
+
+    <div class="aviso">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M12 3l9 16H3zM12 10v4M12 16.5v.1"/>
+      </svg>
+      <div class="aviso__cuerpo">
+        <h3>Antes de tu primera reserva</h3>
+        <p class="apoyo">Si vas a usar los brazos robóticos, las gafas de realidad aumentada o las impresoras 3D, tendrás que hacer primero la capacitación presencial que dicta el equipo del laboratorio. Y debes llegar a ML 508 dentro del horario que reservaste — el cupo no se recupera.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="pie">
+  <div class="contenedor">
+    <div class="pie__alto">
+      <div class="pie__col pie__col--ancha">
+        <a class="marca" href="../index.html" style="color: #fff;">
+          <img src="../assets/img/logo-aia-blanco.png" alt="" width="44" height="57">
+          <span>
+            <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
+            <span class="marca__sub">Ingeniería Industrial · Uniandes</span>
+          </span>
+        </a>
+        <p class="pie__texto">El laboratorio de Industria 4.0 de Ingeniería Industrial de la Universidad de los Andes. Robótica, manufactura aditiva, realidad aumentada e inteligencia artificial aplicada a operaciones reales.</p>
+      </div>
+      <nav class="pie__col" aria-label="Pie de página">
+        <span class="pie__titulo-col">Navegación</span>
+        <a href="../index.html">AIA</a>
+        <a href="laboratorio.html">El laboratorio</a>
+        <a href="laboratorio.html#nuestra-gente">Nuestra gente</a>
+        <a href="equipos.html">Equipos</a>
+        <a href="investigacion.html">Investigación</a>
+        <a href="eventos.html">Eventos</a>
+      </nav>
+      <div class="pie__col">
+        <span class="pie__titulo-col">Horario de atención</span>
+        <div>
+          <div style="font-size: 0.8125rem; color: rgba(255,255,255,0.72);">Lunes a viernes</div>
+          <div class="pie__dato-grande">8:00 a.m. – 6:00 p.m.</div>
+        </div>
+        <p class="pie__aviso">Solo se puede entrar dentro de estas horas, con personal del AIA presente.</p>
+        <a href="laboratorio.html#horario" style="color: var(--acento-marca); font-weight: 700; font-size: 0.8125rem;">Ver el horario completo →</a>
+      </div>
+      <div class="pie__col">
+        <span class="pie__titulo-col">Dónde y con quién</span>
+        <div>
+          <div class="pie__dato-grande">ML 508</div>
+          <div style="font-size: 0.8125rem; line-height: 1.55; color: rgba(255,255,255,0.72);">Edificio Mario Laserna, quinto piso<br>Universidad de los Andes, Bogotá</div>
+        </div>
+        <a href="mailto:aiaindustrial@uniandes.edu.co">aiaindustrial@uniandes.edu.co</a>
+        <span style="font-size: 0.8125rem; color: rgba(255,255,255,0.46);">También al equipo por Microsoft Teams</span>
+      </div>
+    </div>
+    <div class="pie__bajo">
+      <span>Universidad de los Andes · Facultad de Ingeniería · Departamento de Ingeniería Industrial</span>
+      <a href="#catalogo" style="font-weight: 600;">Reservar un equipo</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/tema.js" defer></script>
+<script src="../js/menu.js" defer></script>
+<script src="../js/filtros.js" defer></script>
+</body>
+</html>

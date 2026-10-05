@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/sitemap.xml
