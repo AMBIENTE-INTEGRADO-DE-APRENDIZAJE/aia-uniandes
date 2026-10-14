@@ -15,7 +15,7 @@ import os
 
 # La raiz del sitio es la carpeta que contiene a herramientas/.
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-P = "../../"   # pages/eventos/ -> raiz del sitio
+P = "../"   # eventos/ -> raiz del sitio
 
 EVENTOS = [
     {
@@ -73,12 +73,13 @@ def tildar(texto):
 
 
 # destino de cada pestana visto desde pages/eventos/
+# destino de cada pestana visto desde eventos/
 NAV = [
-    ("../../index.html", "AIA"),
-    ("../laboratorio.html", "Laboratorio"),
-    ("../equipos.html", "Equipos"),
-    ("../investigacion.html", "Investigación"),
-    ("../eventos.html", "Eventos"),
+    ("../", "AIA"),
+    ("../laboratorio/", "Laboratorio"),
+    ("../equipos/", "Equipos"),
+    ("../investigacion/", "Investigación"),
+    ("./", "Eventos"),
 ]
 
 
@@ -103,7 +104,7 @@ def pie(p):
   <div class="contenedor">
     <div class="pie__alto">
       <div class="pie__col pie__col--ancha">
-        <a class="marca" href="{p}index.html" style="color: #fff;">
+        <a class="marca" href="{p}" style="color: #fff;">
           <img src="{p}assets/img/logo-aia-blanco.png" alt="" width="44" height="57">
           <span>
             <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
@@ -114,12 +115,12 @@ def pie(p):
       </div>
       <nav class="pie__col" aria-label="Pie de página">
         <span class="pie__titulo-col">Navegación</span>
-        <a href="{p}index.html">AIA</a>
-        <a href="../laboratorio.html">El laboratorio</a>
-        <a href="../laboratorio.html#nuestra-gente">Nuestra gente</a>
-        <a href="../equipos.html">Equipos</a>
-        <a href="../investigacion.html">Investigación</a>
-        <a href="../eventos.html">Eventos</a>
+        <a href="{p}">AIA</a>
+        <a href="../laboratorio/">El laboratorio</a>
+        <a href="../laboratorio/#nuestra-gente">Nuestra gente</a>
+        <a href="../equipos/">Equipos</a>
+        <a href="../investigacion/">Investigación</a>
+        <a href="./">Eventos</a>
       </nav>
       <div class="pie__col">
         <span class="pie__titulo-col">Horario de atención</span>
@@ -128,7 +129,7 @@ def pie(p):
           <div class="pie__dato-grande">8:00 a.m. – 6:00 p.m.</div>
         </div>
         <p class="pie__aviso">Solo se puede entrar dentro de estas horas, con personal del AIA presente.</p>
-        <a href="../laboratorio.html#horario" style="color: var(--acento-marca); font-weight: 700; font-size: 0.8125rem;">Ver el horario completo →</a>
+        <a href="../laboratorio/#horario" style="color: var(--acento-marca); font-weight: 700; font-size: 0.8125rem;">Ver el horario completo →</a>
       </div>
       <div class="pie__col">
         <span class="pie__titulo-col">Dónde y con quién</span>
@@ -142,7 +143,7 @@ def pie(p):
     </div>
     <div class="pie__bajo">
       <span>Universidad de los Andes · Facultad de Ingeniería · Departamento de Ingeniería Industrial</span>
-      <a href="../equipos.html" style="font-weight: 600;">Reservar un equipo</a>
+      <a href="../equipos/" style="font-weight: 600;">Reservar un equipo</a>
     </div>
   </div>
 </footer>""".format(p=p)
@@ -198,7 +199,7 @@ PLANTILLA = """<!doctype html>
 <header class="encabezado">
   <div class="contenedor">
     <div class="encabezado__barra">
-      <a class="marca" href="{p}index.html">
+      <a class="marca" href="{p}">
         <img src="{p}assets/img/logo-aia.png" alt="" width="38" height="49">
         <span>
           <span class="marca__nombre">Ambiente Integrado de Aprendizaje</span>
@@ -211,7 +212,7 @@ PLANTILLA = """<!doctype html>
           <button class="tema__boton" type="button" data-poner-tema="claro" aria-pressed="true">Claro</button>
           <button class="tema__boton" type="button" data-poner-tema="oscuro" aria-pressed="false">Oscuro</button>
         </div>
-        <a class="boton boton--primario boton--compacto" href="../equipos.html">Reservar</a>
+        <a class="boton boton--primario boton--compacto" href="../equipos/">Reservar</a>
       </nav>
       <button class="menu-boton" type="button" data-menu-boton aria-expanded="false" aria-controls="menu-movil">
         <span class="oculto-visual">Abrir menú</span>
@@ -229,9 +230,9 @@ PLANTILLA = """<!doctype html>
 <main id="contenido">
   <article class="seccion contenedor">
     <nav class="migas" aria-label="Ruta">
-      <a href="{p}index.html">Inicio</a>
+      <a href="{p}">Inicio</a>
       <span class="migas__sep" aria-hidden="true">/</span>
-      <a href="../eventos.html">Eventos</a>
+      <a href="./">Eventos</a>
       <span class="migas__sep" aria-hidden="true">/</span>
       <span class="migas__actual" aria-current="page">{titulo}</span>
     </nav>
@@ -261,7 +262,7 @@ PLANTILLA = """<!doctype html>
         </div>
         <a class="boton boton--primario" href="mailto:aiaindustrial@uniandes.edu.co">Escríbenos</a>
       </div>
-      <p style="margin-top: 28px;"><a href="../eventos.html">← Volver a todos los eventos</a></p>
+      <p style="margin-top: 28px;"><a href="./">← Volver a todos los eventos</a></p>
     </div>
   </article>
 </main>
@@ -276,7 +277,7 @@ PLANTILLA = """<!doctype html>
 
 
 def main():
-    enlaces, chips = chrome_nav("../eventos.html")
+    enlaces, chips = chrome_nav("./")
     pie_html = pie(P)
 
     for ev in EVENTOS:
@@ -286,7 +287,7 @@ def main():
         cuerpo_parrafos = [tildar(x) for x in ev["cuerpo"]]
         foto_alt = tildar(ev["foto_alt"])
 
-        url = "%s/pages/eventos/%s.html" % (BASE, ev["slug"])
+        url = "%s/eventos/%s.html" % (BASE, ev["slug"])
         og_img = "%s/%s" % (BASE, ev["foto"]) if ev["foto"] else "%s/assets/img/logo-aia.png" % BASE
 
         if ev["foto"]:
@@ -343,7 +344,7 @@ def main():
             fecha_iso=ev["fecha_iso"], fecha_texto=ev["fecha_texto"],
         )
 
-        destino = os.path.join(RAIZ, "pages", "eventos", ev["slug"] + ".html")
+        destino = os.path.join(RAIZ, "eventos", ev["slug"] + ".html")
         io.open(destino, "w", encoding="utf-8").write(html)
         print("escrito %-46s %6d bytes" % (destino.split("/")[-1], len(html)))
 

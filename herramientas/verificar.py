@@ -12,14 +12,20 @@ import os
 # La raiz del sitio es la carpeta que contiene a herramientas/.
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-PAGINAS = [
-    "index.html",
-    "pages/laboratorio.html", "pages/equipos.html",
-    "pages/investigacion.html", "pages/eventos.html",
-    "pages/eventos/escape-room-espacial.html",
-    "pages/eventos/colegio-himalaya-fusagasuga.html",
-    "pages/eventos/colegio-tecnico-zipaquira.html",
-]
+BASE = "https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes"
+
+# pagina -> URL con la que debe publicarse. Una carpeta se sirve por su
+# index.html, asi que su URL termina en "/" y no lleva el nombre del archivo.
+PAGINAS = {
+    "index.html": BASE + "/",
+    "laboratorio/index.html": BASE + "/laboratorio/",
+    "equipos/index.html": BASE + "/equipos/",
+    "investigacion/index.html": BASE + "/investigacion/",
+    "eventos/index.html": BASE + "/eventos/",
+    "eventos/escape-room-espacial.html": BASE + "/eventos/escape-room-espacial.html",
+    "eventos/colegio-himalaya-fusagasuga.html": BASE + "/eventos/colegio-himalaya-fusagasuga.html",
+    "eventos/colegio-tecnico-zipaquira.html": BASE + "/eventos/colegio-tecnico-zipaquira.html",
+}
 
 
 class Recolector(HTMLParser):
@@ -67,7 +73,7 @@ class Recolector(HTMLParser):
 
 
 fallos = 0
-for pagina in PAGINAS:
+for pagina, url_esperada in PAGINAS.items():
     ruta = os.path.join(RAIZ, pagina)
     if not os.path.exists(ruta):
         print("FALTA LA PAGINA %s" % pagina)
@@ -82,7 +88,12 @@ for pagina in PAGINAS:
     rotos = []
     for recurso in sorted(set(r.recursos)):
         destino = os.path.normpath(os.path.join(carpeta, recurso))
-        if not os.path.exists(destino):
+        # Un enlace que termina en "/" apunta a una carpeta: el servidor
+        # entrega su index.html, asi que eso es lo que hay que comprobar.
+        if recurso.endswith("/") or recurso in (".", ".."):
+            if not os.path.exists(os.path.join(destino, "index.html")):
+                rotos.append(recurso + "  (falta su index.html)")
+        elif not os.path.exists(destino):
             rotos.append(recurso)
 
     anclas_rotas = sorted(set(a for a in r.anclas if a and a not in r.ids))
@@ -90,8 +101,17 @@ for pagina in PAGINAS:
     seo = []
     if '<meta name="description"' not in texto:
         seo.append("sin description")
-    if '<link rel="canonical"' not in texto:
-        seo.append("sin canonical")
+
+    # El canonical y el og:url no solo deben existir: deben apuntar a la URL
+    # con la que la pagina se publica de verdad. Un canonical equivocado es
+    # peor que no tenerlo, porque le dice a Google que la buena es otra.
+    for etiqueta, patron in (("canonical", r'<link rel="canonical" href="([^"]*)"'),
+                             ("og:url", r'<meta property="og:url" content="([^"]*)"')):
+        hallado = re.search(patron, texto)
+        if not hallado:
+            seo.append("sin " + etiqueta)
+        elif hallado.group(1) != url_esperada:
+            seo.append("%s apunta a %s (deberia ser %s)" % (etiqueta, hallado.group(1), url_esperada))
     if texto.count("<h1") != 1:
         seo.append("%d etiquetas h1" % texto.count("<h1"))
     if 'lang="es"' not in texto:

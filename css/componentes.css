@@ -488,8 +488,10 @@
   box-shadow: var(--sombra-alta);
   color: var(--texto-sobre-placa);
 }
-.baraja__carta[data-frente='si'] .ficha__modelo,
-.baraja__carta[data-frente='si'] .baraja__cta {
+/* Solo la etiqueta del modelo cambia a teal sobre la tarjeta del frente.
+   El boton NO entra aqui: su relleno ya es teal, y pintarle el texto del
+   mismo color lo dejaba invisible. */
+.baraja__carta[data-frente='si'] .ficha__modelo {
   color: var(--acento-marca);
 }
 .baraja__carta[data-frente='si'] p {
