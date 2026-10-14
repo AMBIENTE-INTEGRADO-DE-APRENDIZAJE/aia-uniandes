@@ -308,6 +308,29 @@
   border-left: 1px solid var(--borde);
 }
 
+/* Condición propia de un equipo, dentro de su ficha. Se marca en ámbar
+   porque cambia cómo hay que reservar, no es solo una característica más. */
+.ficha__nota {
+  display: flex;
+  gap: 11px;
+  margin-top: 4px;
+  padding: 14px 16px;
+  background: var(--aviso-fondo);
+  border: 1px solid var(--aviso-borde);
+  border-radius: var(--r-control);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--texto-2);
+}
+.ficha__nota svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--aviso-icono);
+}
+.ficha__nota strong {
+  color: var(--texto);
+}
+
 /* --- Tabla de horario --------------------------------------------------
    Es una tabla de verdad, no una imagen ni una rejilla de divs: así se
    indexa, se copia y la lee un lector de pantalla. */
