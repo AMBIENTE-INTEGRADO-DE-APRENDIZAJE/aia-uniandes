@@ -101,7 +101,7 @@
            data-filtros data-objetivo="#catalogo" data-contador="#cuenta-equipos">
         <button class="chip" type="button" data-categoria-filtro="todos" aria-pressed="true">Todos</button>
         <button class="chip" type="button" data-categoria-filtro="robotica" aria-pressed="false">Robótica</button>
-        <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Manufactura aditiva</button>
+        <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Impresión 3D</button>
         <button class="chip" type="button" data-categoria-filtro="ar" aria-pressed="false">Realidad mixta</button>
         <button class="chip" type="button" data-categoria-filtro="computo" aria-pressed="false">Cómputo</button>
       </div>
@@ -113,9 +113,10 @@
     <div class="columna" style="gap: 18px;">
 
       <article class="ficha" data-categoria="robotica">
-        <div class="ficha__media">
-          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 20h14M7 20v-6M7 14l6-7M13 7l5 4M18 11v4"/></svg>
-          <span class="ficha__media-nota">Foto pendiente — celda UR3</span>
+        <div class="ficha__media" style="padding: 0;">
+          <img src="../assets/img/equipos/celda-ur-600.jpg" width="600" height="800" loading="lazy"
+               style="width: 100%; height: 100%; object-fit: cover;"
+               alt="Celda de trabajo del laboratorio con un brazo Universal Robots sobre una banda transportadora">
         </div>
         <div class="ficha__cuerpo">
           <div class="evento__meta">
@@ -136,17 +137,18 @@
       </article>
 
       <article class="ficha" data-categoria="fabricacion">
-        <div class="ficha__media">
-          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v5H4zM12 9v4M6 20l6-7 6 7z"/></svg>
-          <span class="ficha__media-nota">Foto pendiente — impresora X1 Carbon</span>
+        <div class="ficha__media" style="padding: 0;">
+          <img src="../assets/img/equipos/impresora-3d-640.jpg" width="640" height="620" loading="lazy"
+               style="width: 100%; height: 100%; object-fit: cover;"
+               alt="Impresora 3D Bambu Lab H2D del laboratorio con una pieza recién impresa en la bandeja">
         </div>
         <div class="ficha__cuerpo">
           <div class="evento__meta">
             <span class="ficha__modelo">Bambulab H2D · X1 Carbon</span>
             <span class="marca-estado marca-estado--capacitacion">Capacitación previa presencial</span>
           </div>
-          <h2 style="font-size: 1.625rem;">Impresión 3D de manufactura aditiva</h2>
-          <p class="apoyo">Sistemas de manufactura aditiva avanzada para prototipado rápido y preciso. Aptos para piezas funcionales y para pruebas de materiales en proyectos de curso o de grado.</p>
+          <h2 style="font-size: 1.625rem;">Impresión 3D</h2>
+          <p class="apoyo">Impresoras para prototipado rápido y preciso. Aptas para piezas funcionales y para pruebas de materiales en proyectos de curso o de grado.</p>
           <div class="chips" style="gap: 8px;">
             <span class="etiqueta-tec">Prototipado rápido</span>
             <span class="etiqueta-tec">Piezas funcionales</span>
@@ -174,9 +176,10 @@
       </article>
 
       <article class="ficha" data-categoria="ar">
-        <div class="ficha__media">
-          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9h20v6h-7l-3 3-3-3H2z"/></svg>
-          <span class="ficha__media-nota">Foto pendiente — HoloLens 2</span>
+        <div class="ficha__media" style="padding: 0;">
+          <img src="../assets/img/equipos/hololens-640.jpg" width="640" height="620" loading="lazy"
+               style="width: 100%; height: 100%; object-fit: cover;"
+               alt="Visor de realidad mixta Microsoft HoloLens 2 sobre una mesa del laboratorio">
         </div>
         <div class="ficha__cuerpo">
           <div class="evento__meta">
@@ -197,9 +200,10 @@
       </article>
 
       <article class="ficha" data-categoria="computo">
-        <div class="ficha__media">
-          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v11H3zM8 20h8M12 16v4"/></svg>
-          <span class="ficha__media-nota">Foto pendiente — estación de trabajo</span>
+        <div class="ficha__media" style="padding: 0;">
+          <img src="../assets/img/equipos/computo-640.jpg" width="640" height="620" loading="lazy"
+               style="width: 100%; height: 100%; object-fit: cover;"
+               alt="Estación de cómputo de alto rendimiento del laboratorio: torre, monitor y periféricos">
         </div>
         <div class="ficha__cuerpo">
           <div class="evento__meta">
@@ -220,9 +224,10 @@
       </article>
 
       <article class="ficha" data-categoria="computo">
-        <div class="ficha__media">
-          <svg width="76" height="76" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4zM8 9h8M8 13h8M8 17h5"/></svg>
-          <span class="ficha__media-nota">Foto pendiente — estación de posgrado</span>
+        <div class="ficha__media" style="padding: 0;">
+          <img src="../assets/img/equipos/computo-posgrado-640.jpg" width="640" height="620" loading="lazy"
+               style="width: 100%; height: 100%; object-fit: cover;"
+               alt="Estación de cómputo para posgrado: torre de refrigeración líquida, monitor y cámara">
         </div>
         <div class="ficha__cuerpo">
           <div class="evento__meta">

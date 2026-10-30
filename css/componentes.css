@@ -154,7 +154,7 @@
 .panel {
   display: flex;
   flex-direction: column;
-  padding: 32px;
+  padding: 26px 28px;
   background: var(--panel);
   border: 1px solid var(--borde);
   border-radius: var(--r-panel);
@@ -175,9 +175,40 @@
   box-shadow: var(--sombra);
   transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
 }
+/* El enlace baja al pie de la tarjeta: con textos de distinto largo, si no,
+   cada uno queda a una altura y la fila se ve desordenada. */
+.tarjeta > a:last-child {
+  margin-top: auto;
+  padding-top: 4px;
+}
+
 .tarjeta--alzable:hover {
   transform: translateY(-5px);
   box-shadow: var(--sombra-alta);
+}
+
+/* Variante que empieza con un video o una foto a todo el ancho de la tarjeta. */
+.tarjeta--media {
+  gap: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.tarjeta__media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0;
+  box-shadow: none;
+}
+.tarjeta__cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 11px;
+  padding: 20px 28px 26px;
+}
+.tarjeta__cuerpo > a:last-child {
+  margin-top: auto;
+  padding-top: 4px;
 }
 .tarjeta__numero {
   font-family: var(--display);
@@ -212,11 +243,83 @@
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.45);
 }
-.placa video,
 .placa img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+/* Un video se ve completo: varios llevan texto y controles dentro del
+   cuadro, y recortarlos corta justo lo que hay que leer. */
+.placa video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* --- Servicios ---------------------------------------------------------- */
+
+/* Tarjeta con foto arriba y el nombre del servicio encima de ella. */
+.servicio {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--r-tarjeta);
+  box-shadow: var(--sombra);
+  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms ease;
+}
+.servicio:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--sombra-alta);
+}
+
+.servicio__media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  background: var(--placa);
+}
+.servicio__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Velo de abajo hacia arriba: sin el, el nombre en blanco se pierde en las
+   zonas claras de la foto. */
+.servicio__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,
+    rgba(7, 14, 23, 0.9) 0%,
+    rgba(7, 14, 23, 0.46) 48%,
+    rgba(7, 14, 23, 0.1) 100%);
+}
+
+.servicio__titulo {
+  position: absolute;
+  z-index: 1;
+  right: 22px;
+  bottom: 17px;
+  left: 22px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.25rem, 1.05rem + 0.7vw, 1.625rem);
+  font-weight: 800;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55);
+}
+
+.servicio__cuerpo {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 11px;
+  padding: 20px 24px 24px;
+}
+.servicio__cuerpo > a:last-child {
+  margin-top: auto;
+  padding-top: 4px;
 }
 
 /* --- Aviso ------------------------------------------------------------- */

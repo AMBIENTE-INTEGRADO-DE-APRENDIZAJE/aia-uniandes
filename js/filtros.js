@@ -31,6 +31,10 @@
       if (contador) {
         contador.textContent = visibles + ' de ' + total;
       }
+
+      // Quien dibuje esa lista — el carrusel, por ejemplo — necesita saber que
+      // cambio, para repartir de nuevo solo con lo que queda a la vista.
+      lista.dispatchEvent(new CustomEvent('filtrado', { bubbles: true }));
     }
 
     grupo.addEventListener('click', function (evento) {

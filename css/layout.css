@@ -11,10 +11,10 @@
 }
 
 .seccion {
-  padding-block: 56px;
+  padding-block: 40px;
 }
 .seccion--corta {
-  padding-block: 32px;
+  padding-block: 24px;
 }
 
 /* El encabezado de sección: título a la izquierda, texto de apoyo a la
@@ -22,12 +22,35 @@
 .seccion__cabeza {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: 52px;
+  gap: 40px;
   align-items: end;
-  margin-bottom: 28px;
+  margin-bottom: 22px;
 }
 .seccion__cabeza > :last-child {
   margin-bottom: 6px;
+}
+
+/* Una linea tenue marca donde termina una linea de investigacion y empieza la
+   siguiente. Va en el borde superior de la seccion, asi que el relleno de
+   arriba y el de abajo la dejan centrada entre los dos bloques; los lados se
+   recogen al ancho del contenido para que no sobresalga del texto. */
+.seccion--separada {
+  position: relative;
+}
+.seccion--separada::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--margen-lateral);
+  right: var(--margen-lateral);
+  height: 1px;
+  background: var(--borde);
+}
+
+/* El proyecto destacado y las demos se meten hacia adentro: el sangrado basta
+   para leer de un vistazo que cuelgan del titulo de la linea. */
+.linea__cuerpo {
+  padding-left: 30px;
 }
 
 /* --- Encabezado --- */
@@ -257,7 +280,7 @@
 
 @media (max-width: 900px) {
   .seccion {
-    padding-block: 40px;
+    padding-block: 32px;
   }
   .seccion__cabeza {
     grid-template-columns: 1fr;
@@ -267,6 +290,9 @@
   .rejilla--2,
   .rejilla--3 {
     grid-template-columns: 1fr;
+  }
+  .linea__cuerpo {
+    padding-left: 14px;
   }
   .nav {
     display: none;

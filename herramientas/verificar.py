@@ -34,6 +34,7 @@ class Recolector(HTMLParser):
         self.recursos = []
         self.pila = []
         self.desbalance = []
+        self.sin_cerrar = []
         self.ids = set()
         self.anclas = []
 
@@ -66,8 +67,11 @@ class Recolector(HTMLParser):
         if self.pila and self.pila[-1] == tag:
             self.pila.pop()
         elif tag in self.pila:
-            while self.pila and self.pila.pop() != tag:
-                pass
+            while self.pila:
+                arrastrada = self.pila.pop()
+                if arrastrada == tag:
+                    break
+                self.sin_cerrar.append(arrastrada)
         else:
             self.desbalance.append(tag)
 
@@ -83,6 +87,9 @@ for pagina, url_esperada in PAGINAS.items():
     texto = io.open(ruta, encoding="utf-8").read()
     r = Recolector()
     r.feed(texto)
+    r.close()
+    # Y lo que siga abierto al terminar el documento tampoco se cerro nunca.
+    r.sin_cerrar += [t for t in r.pila if t not in ("html", "body", "head")]
 
     carpeta = os.path.dirname(ruta)
     rotos = []
@@ -120,7 +127,7 @@ for pagina, url_esperada in PAGINAS.items():
         seo.append("sin Open Graph")
 
     estado = "OK"
-    if rotos or anclas_rotas or r.desbalance or seo:
+    if rotos or anclas_rotas or r.desbalance or r.sin_cerrar or seo:
         estado = "REVISAR"
         fallos += 1
 
@@ -131,6 +138,8 @@ for pagina, url_esperada in PAGINAS.items():
         print("      ancla sin destino:   #%s" % x)
     for x in set(r.desbalance):
         print("      cierre sin apertura: </%s>" % x)
+    for x in sorted(set(r.sin_cerrar)):
+        print("      apertura sin cierre: <%s>  (el navegador la anida con lo que sigue)" % x)
     for x in seo:
         print("      SEO: %s" % x)
 

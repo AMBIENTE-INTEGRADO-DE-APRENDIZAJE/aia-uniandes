@@ -133,7 +133,8 @@
     "Robótica colaborativa",
     "Manufactura aditiva",
     "Realidad aumentada",
-    "Inteligencia artificial aplicada a sistemas ciberfísicos"
+    "Inteligencia artificial",
+    "Sistemas ciberfísicos"
   ]
 }
 </script>
@@ -192,11 +193,6 @@
   <section class="seccion contenedor">
     <div class="rejilla rejilla--2" style="gap: 44px; align-items: center;">
       <div class="columna" style="gap: 20px;">
-        <span class="pildora">
-          <span class="pildora__punto"></span>
-          Laboratorio activo · ML 508
-        </span>
-
         <h1>Ambiente Integrado de Aprendizaje y <span style="color: var(--acento);">espacios ciberfísicos</span></h1>
 
         <p class="entradilla">
@@ -212,35 +208,136 @@
         </div>
       </div>
 
-      <div style="position: relative;">
-        <div class="placa" style="height: 420px;">
-          <video muted loop playsinline autoplay preload="metadata" aria-label="Brazo robótico del laboratorio en operación">
-            <source src="assets/video/brazo-ur3.mp4" type="video/mp4">
-          </video>
-          <span class="placa__nota">Brazo UR3 en operación</span>
-        </div>
-        <span style="position: absolute; top: -18px; right: -10px; display: block; padding: 18px 24px; background: var(--acento-marca); color: var(--sobre-acento-marca); border-radius: var(--r-tarjeta); box-shadow: 0 26px 44px rgba(15,124,138,0.34); font-family: var(--display); font-size: 1.1875rem; font-weight: 700; letter-spacing: -0.03em;">
-          Equipos reservables
-        </span>
+      <div class="placa" style="aspect-ratio: 16 / 9;">
+        <video muted loop playsinline autoplay preload="metadata" aria-label="Simulación de distribución de planta hecha en el laboratorio">
+          <source src="assets/video/ia-ciberfisicos/distribucion-de-planta.mp4" type="video/mp4">
+        </video>
+        <span class="placa__nota">Distribución de planta</span>
       </div>
+    </div>
+  </section>
+
+  <!-- ===================== Líneas de trabajo ===================== -->
+  <section class="seccion contenedor" aria-labelledby="t-lineas">
+    <h2 id="t-lineas" style="margin-bottom: 24px;">En qué trabajamos</h2>
+    <div class="rejilla rejilla--3">
+      <article class="tarjeta tarjeta--alzable tarjeta--media">
+        <video class="placa tarjeta__media" controls preload="metadata" aria-label="Celda de paletizado con cobot en el laboratorio AIA">
+          <source src="assets/video/robotica/paletizado.mp4#t=1" type="video/mp4">
+        </video>
+        <div class="tarjeta__cuerpo">
+          <span class="tarjeta__numero">01</span>
+          <h3>Robótica</h3>
+          <p class="tarjeta__texto">
+            Diseño, programación y control de sistemas robóticos aplicados a la
+            automatización de procesos logísticos.
+          </p>
+          <a href="investigacion/#linea-1">Ver más proyectos</a>
+        </div>
+      </article>
+
+      <article class="tarjeta tarjeta--alzable tarjeta--media">
+        <video class="placa tarjeta__media" controls preload="metadata" aria-label="Simulación de una curva de aprendizaje en una operación industrial">
+          <source src="assets/video/ia-ciberfisicos/curva-de-aprendizaje.mp4#t=1" type="video/mp4">
+        </video>
+        <div class="tarjeta__cuerpo">
+          <span class="tarjeta__numero">02</span>
+          <h3>Inteligencia artificial</h3>
+          <p class="tarjeta__texto">
+            Análisis de datos, inteligencia artificial y algoritmos de optimización
+            aplicados a operaciones industriales reales.
+          </p>
+          <a href="investigacion/#linea-2">Ver más proyectos</a>
+        </div>
+      </article>
+
+      <article class="tarjeta tarjeta--alzable tarjeta--media">
+        <video class="placa tarjeta__media" controls preload="metadata" aria-label="SCADA del Solar Living Lab supervisando la instalación">
+          <source src="assets/video/ia-ciberfisicos/scada-solar-living-lab.mp4#t=1" type="video/mp4">
+        </video>
+        <div class="tarjeta__cuerpo">
+          <span class="tarjeta__numero">03</span>
+          <h3>Sistemas ciberfísicos</h3>
+          <p class="tarjeta__texto">
+            Adquisición de datos, supervisión y control de instalaciones reales, y gemelos
+            digitales que reflejan lo que ocurre en planta.
+          </p>
+          <a href="investigacion/#linea-3">Ver más proyectos</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================== Servicios ===================== -->
+  <section class="seccion contenedor" id="servicios" aria-labelledby="t-servicios">
+    <div style="margin-bottom: 22px;">
+      <h2 id="t-servicios">Servicios</h2>
+      <p class="entradilla" style="margin-top: 12px;">
+        Además de las líneas de investigación, el AIA presta tres servicios abiertos a
+        estudiantes, monitores y profesores de la Facultad.
+      </p>
+    </div>
+
+    <div class="rejilla rejilla--3">
+      <article class="servicio">
+        <div class="servicio__media">
+          <img src="assets/img/servicios/impresion-3d.jpg" width="760" height="475" loading="lazy"
+               alt="Impresora 3D Bambu Lab H2D del laboratorio con una pieza recién impresa">
+          <h3 class="servicio__titulo">Impresión 3D</h3>
+        </div>
+        <div class="servicio__cuerpo">
+          <p class="tarjeta__texto">
+            Prototipado rápido y preciso, piezas funcionales y pruebas de materiales.
+            Reservas la impresora en la primera hora del día y pasas a imprimir dentro del
+            horario de atención.
+          </p>
+          <a href="equipos/#catalogo">Reservar una impresora</a>
+        </div>
+      </article>
+
+      <article class="servicio">
+        <div class="servicio__media">
+          <img src="assets/img/servicios/acompanamiento.jpg" width="760" height="475" loading="lazy"
+               alt="Brazo robótico Universal Robots y banda transportadora en el laboratorio AIA">
+          <h3 class="servicio__titulo">Acompañamiento a estudiantes</h3>
+        </div>
+        <div class="servicio__cuerpo">
+          <p class="tarjeta__texto">
+            El equipo del AIA te acompaña para que desarrolles tu proyecto, tu tesis o tu
+            trabajo de curso con los equipos del laboratorio: te capacitamos en el equipo
+            que necesitas y te apoyamos durante el desarrollo.
+          </p>
+          <a href="laboratorio/#t-pasos">Cómo empezar</a>
+        </div>
+      </article>
+
+      <article class="servicio">
+        <div class="servicio__media">
+          <img src="assets/img/servicios/ludicas.jpg" width="760" height="475" loading="lazy"
+               alt="Estudiantes trabajando en grupo durante una lúdica en el laboratorio">
+          <h3 class="servicio__titulo">Lúdicas para cursos</h3>
+        </div>
+        <div class="servicio__cuerpo">
+          <p class="tarjeta__texto">
+            Monitores, asistentes y profesores pueden usar el espacio del laboratorio para
+            actividades, talleres, prácticas o capacitaciones con los estudiantes de sus
+            cursos.
+          </p>
+          <a href="mailto:aiaindustrial@uniandes.edu.co">Solicitar el espacio</a>
+        </div>
+      </article>
     </div>
   </section>
 
   <!-- ===================== Equipos ===================== -->
   <section class="seccion contenedor" aria-labelledby="t-equipos">
-    <div class="seccion__cabeza">
-      <h2 id="t-equipos">Equipos disponibles para reservar</h2>
-      <p class="apoyo">
-        Toca cualquier tarjeta para traerla al frente. La primera reserva de robots,
-        gafas de realidad aumentada o impresoras 3D requiere capacitación previa presencial.
-      </p>
-    </div>
+    <h2 id="t-equipos" style="margin-bottom: 22px;">Equipos disponibles para reservar</h2>
 
     <div class="chips chips--carrusel" style="margin-bottom: 24px;"
          data-filtros data-objetivo="#baraja-equipos">
       <button class="chip" type="button" data-categoria-filtro="todos" aria-pressed="true">Todos</button>
       <button class="chip" type="button" data-categoria-filtro="robotica" aria-pressed="false">Robótica</button>
-      <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Manufactura aditiva</button>
+      <button class="chip" type="button" data-categoria-filtro="fabricacion" aria-pressed="false">Impresión 3D</button>
       <button class="chip" type="button" data-categoria-filtro="ar" aria-pressed="false">Realidad mixta</button>
       <button class="chip" type="button" data-categoria-filtro="computo" aria-pressed="false">Cómputo</button>
     </div>
@@ -268,7 +365,7 @@
           <path d="M4 4h16v5H4zM12 9v4M6 20l6-7 6 7z"/>
         </svg>
         <h3 class="baraja__titulo">Impresión 3D</h3>
-        <p class="tarjeta__texto">Manufactura aditiva avanzada para prototipado rápido y preciso.</p>
+        <p class="tarjeta__texto">Impresoras para prototipado rápido y preciso, en piezas funcionales y pruebas de materiales.</p>
         <a class="baraja__cta" href="equipos/">Reservar</a>
       </article>
 
@@ -329,42 +426,6 @@
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
       </button>
       <span class="contador" data-contador aria-live="polite">1 de 5</span>
-    </div>
-  </section>
-
-  <!-- ===================== Líneas de trabajo ===================== -->
-  <section class="seccion contenedor" aria-labelledby="t-lineas">
-    <h2 id="t-lineas" style="margin-bottom: 24px;">En qué trabajamos</h2>
-    <div class="rejilla rejilla--3">
-      <article class="tarjeta tarjeta--alzable">
-        <span class="tarjeta__numero">01</span>
-        <h3>Robótica</h3>
-        <p class="tarjeta__texto">
-          Diseño, programación y control de sistemas robóticos aplicados a la
-          automatización de procesos logísticos.
-        </p>
-        <a href="investigacion/#linea-1">Ver la línea</a>
-      </article>
-
-      <article class="tarjeta tarjeta--alzable">
-        <span class="tarjeta__numero">02</span>
-        <h3>Impresión 3D</h3>
-        <p class="tarjeta__texto">
-          Proyectos aplicados a la manufactura aditiva, con investigación en nuevos
-          materiales y enfoques pedagógicos.
-        </p>
-        <a href="investigacion/#linea-2">Ver la línea</a>
-      </article>
-
-      <article class="tarjeta tarjeta--alzable">
-        <span class="tarjeta__numero">03</span>
-        <h3>IA en sistemas ciberfísicos</h3>
-        <p class="tarjeta__texto">
-          Análisis de datos, inteligencia artificial y algoritmos de optimización para
-          simular operaciones industriales reales.
-        </p>
-        <a href="investigacion/#linea-3">Ver la línea</a>
-      </article>
     </div>
   </section>
 
