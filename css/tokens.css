@@ -93,9 +93,8 @@
 
   --fondo: #070e17;
   --fondo-brillo: radial-gradient(820px 460px at 78% 2%, rgba(90, 192, 204, 0.14), transparent 66%);
-  --fondo-trama: linear-gradient(rgba(90, 192, 204, 0.04) 1px, transparent 1px),
-                 linear-gradient(90deg, rgba(90, 192, 204, 0.04) 1px, transparent 1px);
-  --fondo-trama-tam: 64px 64px;
+  --fondo-trama: none;
+  --fondo-trama-tam: auto;
   --panel: rgba(16, 31, 46, 0.62);
   --panel-solido: #0e1b29;
   --panel-encabezado: rgba(16, 31, 46, 0.5);
@@ -138,6 +137,5 @@
 @media (max-width: 720px) {
   :root {
     --margen-lateral: 14px;
-    --fondo-trama-tam: 48px 48px;
   }
 }
