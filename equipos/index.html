@@ -4,15 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Equipos para reservar: robots, impresión 3D y realidad aumentada | AIA Uniandes</title>
-<meta name="description" content="Catálogo de equipos del laboratorio AIA: cobots Universal Robots UR3 y UR30, impresoras Bambulab H2D y X1 Carbon, gafas HoloLens 2 y estaciones de cómputo de alto rendimiento. Reserva sin costo para estudiantes de Uniandes.">
+<title>Recursos: equipos para reservar y bases de datos | AIA Uniandes</title>
+<meta name="description" content="Catálogo de equipos del laboratorio AIA: cobots Universal Robots UR3 y UR30, impresoras Bambulab H2D y X1 Carbon, gafas HoloLens 2 y estaciones de cómputo de alto rendimiento. Incluye recursos descargables para proyectos.">
 <link rel="canonical" href="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/equipos/">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_CO">
 <meta property="og:site_name" content="Ambiente Integrado de Aprendizaje — Uniandes">
-<meta property="og:title" content="Equipos para reservar | AIA Uniandes">
-<meta property="og:description" content="Cobots UR3 y UR30, impresión 3D Bambulab, HoloLens 2 y cómputo de alto rendimiento. Reserva sin costo.">
+<meta property="og:title" content="Recursos: equipos y bases de datos | AIA Uniandes">
+<meta property="og:description" content="Cobots UR3 y UR30, impresión 3D Bambulab, HoloLens 2 y cómputo de alto rendimiento, más recursos descargables.">
 <meta property="og:url" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/equipos/">
 <meta property="og:image" content="https://ambiente-integrado-de-aprendizaje.github.io/aia-uniandes/Oficial_Images/LogoAIA.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -53,7 +53,7 @@
       <nav class="nav" aria-label="Principal">
         <a class="nav__enlace" href="../">AIA</a>
         <a class="nav__enlace" href="../laboratorio/">Laboratorio</a>
-        <a class="nav__enlace" href="../equipos/" aria-current="page">Equipos</a>
+        <a class="nav__enlace" href="../equipos/" aria-current="page">Recursos</a>
         <a class="nav__enlace" href="../investigacion/">Investigación</a>
         <a class="nav__enlace" href="../eventos/">Eventos</a>
         <div class="tema" role="group" aria-label="Tema de color">
@@ -72,7 +72,7 @@
     <div class="nav-movil__pista">
       <a class="chip" href="../">AIA</a>
       <a class="chip" href="../laboratorio/">Laboratorio</a>
-      <a class="chip" href="../equipos/" aria-current="page">Equipos</a>
+      <a class="chip" href="../equipos/" aria-current="page">Recursos</a>
       <a class="chip" href="../investigacion/">Investigación</a>
       <a class="chip" href="../eventos/">Eventos</a>
     </div>
@@ -81,22 +81,22 @@
 
 <main id="contenido">
 
-  <section class="seccion contenedor">
+  <section class="seccion contenedor" style="padding-bottom: 0;">
     <nav class="migas" aria-label="Ruta">
       <a href="../">Inicio</a>
       <span class="migas__sep" aria-hidden="true">/</span>
-      <span class="migas__actual" aria-current="page">Equipos</span>
+      <span class="migas__actual" aria-current="page">Recursos</span>
     </nav>
 
-    <div class="seccion__cabeza">
-      <h1>Todo lo que puedes reservar</h1>
-      <p class="apoyo">
-        Acceso sin costo para estudiantes de pregrado y posgrado de Uniandes.
-        La reserva se hace en línea y el uso es presencial en ML 508.
-      </p>
-    </div>
+    <h1>Recursos</h1>
+    <p class="entradilla" style="margin-top: 12px;">
+      Reserva equipos o descarga recursos para tus proyectos.
+    </p>
+    <p style="margin: 12px 0 24px;">
+      <a href="#recursos">Ir a los recursos descargables ↓</a>
+    </p>
 
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; margin-bottom: 26px;">
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
       <div class="chips chips--carrusel"
            data-filtros data-objetivo="#catalogo" data-contador="#cuenta-equipos">
         <button class="chip" type="button" data-categoria-filtro="todos" aria-pressed="true">Todos</button>
@@ -273,6 +273,31 @@
     </div>
   </section>
 
+  <!-- ===================== Recursos ===================== -->
+  <section class="seccion contenedor" id="recursos" aria-labelledby="t-recursos">
+    <h2 id="t-recursos">Recursos</h2>
+    <p class="entradilla" style="margin: 12px 0 22px;">
+      En esta sección encontrarás recursos disponibles para uso abierto en los proyectos
+      que te interesen. Iremos publicando más con el tiempo.
+    </p>
+
+    <div class="rejilla rejilla--3">
+      <article class="recurso">
+        <span class="recurso__archivo">
+          <span class="recurso__formato">CSV</span>
+          2 KB
+        </span>
+        <h3>Diseño de experimentos de calidad</h3>
+        <p class="tarjeta__texto">
+          Base de datos de un diseño factorial con tres factores —fondo, luz y altura—
+          en dos niveles cada uno, con cinco réplicas por combinación y su promedio.
+          Sirve para practicar análisis de varianza y efectos de interacción.
+        </p>
+        <a class="boton boton--secundario" href="../assets/recursos/diseno-experimentos-calidad.csv" download>Descargar</a>
+      </article>
+    </div>
+  </section>
+
 </main>
 
 <footer class="pie">
@@ -293,7 +318,7 @@
         <a href="../">AIA</a>
         <a href="../laboratorio/">El laboratorio</a>
         <a href="../laboratorio/#nuestro-equipo">Nuestro equipo</a>
-        <a href="../equipos/">Equipos</a>
+        <a href="../equipos/">Recursos</a>
         <a href="../investigacion/">Investigación</a>
         <a href="../eventos/">Eventos</a>
       </nav>

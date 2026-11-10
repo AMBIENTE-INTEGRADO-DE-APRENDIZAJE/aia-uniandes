@@ -322,6 +322,42 @@
   padding-top: 4px;
 }
 
+/* --- Recursos descargables ---------------------------------------------- */
+
+.recurso {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  padding: 26px 28px;
+  background: var(--panel);
+  border: 1px solid var(--borde);
+  border-radius: var(--r-tarjeta);
+  box-shadow: var(--sombra);
+}
+
+/* El formato y el tamaño del archivo, para saber qué se está descargando
+   antes de pulsar. */
+.recurso__archivo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 0.625rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--texto-3);
+}
+.recurso__formato {
+  padding: 3px 8px;
+  border: 1px solid var(--borde-chip);
+  border-radius: 6px;
+  color: var(--acento);
+}
+.recurso .boton {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 /* --- Aviso ------------------------------------------------------------- */
 
 .aviso {
